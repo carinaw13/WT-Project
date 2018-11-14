@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavBar from './components/NavBar';
+
+
 
 class App extends Component {
   render() {
@@ -9,6 +12,9 @@ class App extends Component {
         <header className="App-header">
           <p>
             Hello World.
+          </p>
+          <p>
+        <NavBar />
           </p>
         </header>
       </div>
