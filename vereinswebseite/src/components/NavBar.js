@@ -8,7 +8,11 @@ const NavBar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="title" color="inherit">
+<<<<<<< HEAD
                 React & Material-UI Sample Application
+=======
+               React & Material-UI Sample Application 
+>>>>>>> bb8291c4a0cf03823d9629c82e853a4c49673843
                 </Typography>
             </Toolbar>
         </AppBar>
