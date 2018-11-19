@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar';
+import React, { Component } from 'react'
+import './App.css'
+import NavBar from './components/NavBar'
 
 
 
@@ -10,14 +9,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>
-            Hello World.
-          </p>
-          <p>
+          <p> Startseite SC Baierbrunn </p>
+          <p> Spass am Sport </p>
         <NavBar />
-          </p>
         </header>
-      </div>
+       </div>
     );
   }
 }
