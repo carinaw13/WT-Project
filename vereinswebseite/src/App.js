@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import './App.css'
 import Startseite from './components/Startseite'
-import logo from './RZ_Logo_Baierbrunn.svg'
+import logo from './img/RZ_Logo_Baierbrunn.svg'
+
+
 
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <body>
+      <div className="App" >
       <p><img style= {{float:"left"}}src={logo} className='App-logo' alt='logo' />  </p>
         <header className="App-header">
           <h1> <i> SportClub Baierbrunn e.V.</i> </h1>
@@ -29,6 +32,7 @@ class App extends Component {
 			</div>
         </footer>
        </div>
+       </body>
        
     );
   }
