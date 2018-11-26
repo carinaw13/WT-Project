@@ -4,7 +4,8 @@
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
-  height: 23vmin;
+  height: 30vmin;
+  margin-left: 5em
 }
 
 .App-header {
@@ -13,7 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(0.438em + 2vmin);
+  font-size: calc(0.6em + 2vmin);
   font-weight: 500;
   color: #1A237E;
   padding-left: 30.000em; 
