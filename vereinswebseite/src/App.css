@@ -1,11 +1,13 @@
 .App {
   text-align: center;
+  background-image: url(../src/img/Rasen.jpg);
 }
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
   height: 20vmin;
-  margin-left: 5em
+  margin-left: 5em;
+  background-image: url(../src/img/Rasen.jpg);
 }
 
 .App-header {
@@ -18,11 +20,17 @@
   font-weight: 500;
   color: #1A237E;
   padding-left: 20.000em; 
-  
+  background-image: url(../src/img/Rasen.jpg);
 }
+
+body{
+  background-image: url(../src/img/Rasen.jpg);
+}
+
 
 .App-link {
   color: #61dafb;
+  background-image: url(../src/img/Rasen.jpg);
 }
 
 @keyframes App-logo-spin {
