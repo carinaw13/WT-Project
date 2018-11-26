@@ -3,19 +3,21 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 23vmin;
 }
 
 .App-header {
-  background-color: #1A237E;
-  min-height: 100vh;
-  /* display: flex; */
+  background-color:white;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px + 3vmin);
-  color: white;
+  font-size: calc(0.438em + 2vmin);
+  font-weight: 500;
+  color: #1A237E;
+  padding-left: 30.000em; 
+  
 }
 
 .App-link {
