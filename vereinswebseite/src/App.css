@@ -1,25 +1,38 @@
 .App {
   text-align: center;
+   background-image: url(../src/img/Rasen.jpg);
+  
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 20vmin;
+  margin-left: 5em;
+  background-image: url(../src/img/Rasen.jpg);
 }
 
 .App-header {
-  background-color: #1A237E;
-  min-height: 100vh;
-  /* display: flex; */
+  background-color:white;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(20px + 3vmin);
-  color: white;
+  font-size: calc(0.3em + 2vmin);
+  font-weight: 500;
+  color: #1A237E;
+  padding-left: 20.000em; 
+  background-image: url(../src/img/Rasen.jpg);
 }
+
+body{
+  /* Wenn ich das background-image rausnehme, habe ich oben eine Leiste weiß, wenn ich aber das drin lass steht es im footer auch, wo ich es nicht haben will. */
+  background-image: url(../src/img/Rasen.jpg);
+}
+
 
 .App-link {
   color: #61dafb;
+  background-image: url(../src/img/Rasen.jpg);
 }
 
 @keyframes App-logo-spin {
