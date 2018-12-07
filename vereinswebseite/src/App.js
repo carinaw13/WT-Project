@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Startseite from './components/Startseite'
-import logo from './img/RZ_Logo_Baierbrunn.svg'
+import logo from './img/RZ_Logo_Baierbrunn.png'
 
 
 
