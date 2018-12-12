@@ -12,6 +12,7 @@ import Gallery from './pages/image-gallery';
 
 
 
+
 class App extends Component {
   render() {
     return (
