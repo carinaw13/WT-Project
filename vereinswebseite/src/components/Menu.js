@@ -34,7 +34,8 @@ const styles = theme => ({
   Tab:{
     paddingLeft:"3.125em",
     paddingRight:"3.125em",
-    fontSize:"0.938em"
+    fontSize:"0.938em",
+    backgroundColor:"#304FFE"
   },
   search: {
     position: 'relative',
@@ -97,7 +98,7 @@ class TabsWrappedLabel extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { value } = this.state;
+    //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
 
     return (
@@ -109,21 +110,43 @@ class TabsWrappedLabel extends React.Component {
                   Startseite
                   </NavButton>
                 <NavButton
-                  aria-owns={currentMenu === 'simple-menu' ? 'simple-menu' : undefined}
+                  aria-owns={currentMenu === 'about-us-menu' ? 'about-us-menu' : undefined}
                   aria-haspopup="true"
-                  onClick={this.handleClick('simple-menu')}
+                  onClick={this.handleClick('about-us-menu')}
                 >
                   Über uns
                 </NavButton>
                 <Menu
-                  id="simple-menu"
+                  id="about-us-menu"
                   anchorEl={anchorEl}
-                  open={currentMenu === 'simple-menu'}
+                  open={currentMenu === 'about-us-menu'}
                   onClose={this.handleClose}
                 >
-                  <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                  <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                  <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/badminton")
+                  }}>Unsere Geschichte</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/basketball")
+                  }}>Gemeinde Baierbrunn</MenuItem>
+                    <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/basketball")
+                  }}>Vorstand</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/basketball")
+                  }}>Mitglied werden</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/basketball")
+                  }}>Kontakt</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/basketball")
+                  }}>Impressum</MenuItem>
+
                 </Menu>
                 <NavButton
                   aria-owns={currentMenu === 'abt-menu' ? 'abt-menu' : undefined}

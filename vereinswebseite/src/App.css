@@ -1,11 +1,11 @@
 .App {
   text-align: center;
    background-image: url(../src/img/Rasen.jpg);
+   padding-left: 20px;
   
 }
 
 .App-logo {
-  /* animation: App-logo-spin infinite 20s linear; */
   height: 20vmin;
   margin-left: 5em;
   margin-top: 1em;
@@ -23,6 +23,7 @@
   color: #1A237E;
   padding-left: 20.000em; 
   background-image: url(../src/img/Rasen.jpg);
+  padding-left: 20px;
 }
 
 /* body{
@@ -45,9 +46,9 @@
   }
 
   footer{
-      padding: "10px";
       bottom: "0";
       left: "0";
       right: "0";
+      paddingLeft: "30px";
   }
 }
