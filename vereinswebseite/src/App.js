@@ -19,12 +19,14 @@ class App extends Component {
       <Router>
       <div>
         <div className="App" >
+          <header className="App-header">
+          <div>
           <p>
             <img style= {{float:"left"}} src={logo} className='App-logo' alt='logo' /> 
           </p>
-          <header className="App-header">
-            <h1> <i> SportClub Baierbrunn e.V.</i> </h1>
-            <h2 style={{paddingLeft: "4.000em"}}> <i> Spass am Sport </i> </h2>
+          <h1> <i> SportClub Baierbrunn e.V.</i> </h1>
+          <h2 style={{paddingLeft: "4.000em"}}> <i> Spass am Sport </i> </h2>
+          </div> 
           </header>
           <Menu />
           {/* <Gallery/> */}
