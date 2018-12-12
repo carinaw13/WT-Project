@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from "react-router-dom"
 import './App.css'
-import logo from './img/RZ_Logo_Baierbrunn.png'
-
-import Menu from './components/Menu'
-import Startseite from './pages/startseite'
-import AbtBadminton from './pages/abt-badminton'
-import AbtBasketball from './pages/abt-basketball'
-import Gallery from './pages/image-gallery';
+import Startseite from './components/Startseite'
+import logo from './img/RZ_Logo_Baierbrunn.svg'
 
 
 

@@ -1,14 +1,13 @@
 .App {
   text-align: center;
    background-image: url(../src/img/Rasen.jpg);
-   padding-left: 20px;
   
 }
 
 .App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
   height: 20vmin;
   margin-left: 5em;
-  margin-top: 1em;
   background-image: url(../src/img/Rasen.jpg);
 }
 
@@ -23,13 +22,12 @@
   color: #1A237E;
   padding-left: 20.000em; 
   background-image: url(../src/img/Rasen.jpg);
-  padding-left: 20px;
 }
 
-/* body{
-   Wenn ich das background-image rausnehme, habe ich oben eine Leiste weiß, wenn ich aber das drin lass steht es im footer auch, wo ich es nicht haben will. 
+body{
+  /* Wenn ich das background-image rausnehme, habe ich oben eine Leiste weiß, wenn ich aber das drin lass steht es im footer auch, wo ich es nicht haben will. */
   background-image: url(../src/img/Rasen.jpg);
-} */
+}
 
 
 .App-link {
@@ -43,12 +41,5 @@
   }
   to {
     transform: rotate(360deg);
-  }
-
-  footer{
-      bottom: "0";
-      left: "0";
-      right: "0";
-      paddingLeft: "30px";
   }
 }
