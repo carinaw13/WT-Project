@@ -3,6 +3,11 @@ import './App.css'
 import Startseite from './components/Startseite'
 import logo from './img/RZ_Logo_Baierbrunn.svg'
 
+import Menu from './components/Menu'
+import Startseite from './pages/startseite'
+import AbtBadminton from './pages/abt-badminton'
+import AbtBasketball from './pages/abt-basketball'
+import Gallery from './pages/image-gallery';
 
 
 
