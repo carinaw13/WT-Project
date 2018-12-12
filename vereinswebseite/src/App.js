@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from "react-router-dom"
 import './App.css'
-import Startseite from './components/Startseite'
-import logo from './img/RZ_Logo_Baierbrunn.svg'
+import logo from './img/RZ_Logo_Baierbrunn.png'
 
 import Menu from './components/Menu'
 import Startseite from './pages/startseite'
