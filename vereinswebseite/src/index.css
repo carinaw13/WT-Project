@@ -12,3 +12,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+ul{
+  list-style-type: none;
+}
+
+
+.page-header h1 {
+  text-align: center;
+  color: rgb(45, 31, 168);
+}
+
+.page-header img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+  max-width: 100%;
+  height: auto;
+}
+
+.mitglied img {
+  margin-left: 10px;
+  float: left;
+  width: 140px;
+  height: 180px;
+  }
+
+.mitglied {
+  margin-left: 400px;
+  padding-top: 1cm;
+  text-align: center;
+  width: 40%;
+  border: 50px;
+  }
+
+.mitglied h3 {
+    margin-left: 150px;
+    text-align: center;
+    }
+
+.impressum_adresse {
+margin-left: 250px;
+font-size: 16px;
+}
+
+.impressum_copyright {
+  margin-left: 250px;
+  width: 70%;
+  text-align: justify;
+  font-size: 14px;
+  }
