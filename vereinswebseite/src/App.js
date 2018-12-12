@@ -7,7 +7,7 @@ import Menu from './components/Menu'
 import Startseite from './pages/startseite'
 import AbtBadminton from './pages/abt-badminton'
 import AbtBasketball from './pages/abt-basketball'
-import Gallery from './pages/image-gallery';
+// import Gallery from './pages/image-gallery';
 
 
 
@@ -27,7 +27,7 @@ class App extends Component {
             <h2 style={{paddingLeft: "4.000em"}}> <i> Spass am Sport </i> </h2>
           </header>
           <Menu />
-          <Gallery/>
+          {/* <Gallery/> */}
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
