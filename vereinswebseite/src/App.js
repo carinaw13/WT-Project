@@ -24,8 +24,8 @@ class App extends Component {
           <p>
             <img style= {{float:"left"}} src={logo} className='App-logo' alt='logo' /> 
           </p>
-          <h1> <i> SportClub Baierbrunn e.V.</i> </h1>
-          <h2 style={{paddingLeft: "4.000em"}}> <i> Spass am Sport </i> </h2>
+          <h1 style={{paddingTop: "0.5em", paddingLeft:"3.000em", fontSize:"3em"}}> <i> SportClub Baierbrunn e.V.</i> </h1>
+          <h2 style={{paddingLeft: "9.000em",fontSize:"2em"}}> <i> Spass am Sport </i> </h2>
           </div> 
           </header>
           <Menu />
@@ -34,7 +34,7 @@ class App extends Component {
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
         </div>
-        <footer style={{paddingLeft: "30px"}}>
+        <footer className="footer">
           <div class="wrapper">
             <a href="x.html">Home</a> | <a href="y.html">Kontakt</a>| <a href="z.html">Impressum</a>
 				    <p>© 2018 by selfHTML</p>
