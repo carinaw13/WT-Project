@@ -7,6 +7,7 @@ import Menu from './components/Menu'
 import Startseite from './pages/startseite'
 import AbtBadminton from './pages/abt-badminton'
 import AbtBasketball from './pages/abt-basketball'
+import Login from "./containers/Login";
 // import Gallery from './pages/image-gallery';
 
 
@@ -26,13 +27,13 @@ class App extends Component {
           </p>
           <h1 style={{paddingTop: "0.5em", paddingLeft:"3.000em", fontSize:"3em"}}> <i> SportClub Baierbrunn e.V.</i> </h1>
           <h2 style={{paddingLeft: "9.000em",fontSize:"2em"}}> <i> Spass am Sport </i> </h2>
-          </div> 
+          </div>
           </header>
           <Menu />
-          {/* <Gallery/> */}
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
+          <Route path="/login" exact component={Login} />
         </div>
         <footer className="footer">
           <div class="wrapper">
