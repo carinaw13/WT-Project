@@ -1,0 +1,13 @@
+@media all and (min-width: 480px) {
+    .Login {
+      padding: 20px;
+      color: black;
+
+    }
+  
+    .Login form {
+      margin: 10px;
+      padding-left: 500px;
+      min-height: 600px
+    }
+  }
