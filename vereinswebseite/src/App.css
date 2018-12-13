@@ -1,8 +1,6 @@
 .App {
   text-align: center;
-   /* background-image: url(../src/img/Rasen.jpg); */
-   min-height: 900px
-  
+  min-height: 900px;
 }
 
 .App-logo {
@@ -20,7 +18,7 @@
   flex-direction: column;
   justify-content: center;
   font-weight: 400;
-  color: #1A237E;
+  color: darkblue;
   padding-left: 20.000em;
   background-image: url(../src/img/Rasen.jpg);
 }
