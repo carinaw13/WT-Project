@@ -8,9 +8,10 @@ import Startseite from './pages/startseite'
 import AbtBadminton from './pages/abt-badminton'
 import AbtBasketball from './pages/abt-basketball'
 import Login from './containers/Login'
+import Leichtathletik from './pages/abtLeichtathletik'
 // import Vorstand from './pages/ueber-uns/vorstand'
-// import Impressum from './pages/ueber-uns/impressum'
-//import Leichtathletik from './pages/abtLeichtathletik'
+import Impressum from './pages/ueber-uns/impressum'
+
 //import Gallery from './pages/image-gallery';
 
 
@@ -37,9 +38,9 @@ class App extends Component {
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
           <Route path="/login" exact component={Login} />
-          {/* <Route path="/vorstand/" component={Vorstand}/> 
-          <Route path="/impressum/" component={Impressum} />  */}
-          {/* <Route path="/leichtathletik/" component={Leichtathletik} /> */}
+          {/* <Route path="/vorstand/" component={Vorstand}/>  */}
+          <Route path="/impressum/" component={Impressum} /> 
+          <Route path="/leichtathletik/" component={Leichtathletik} />
         </div>
         <footer className="footer">
           <div class="wrapper">
