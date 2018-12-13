@@ -38,16 +38,14 @@ const styles = theme => ({
     backgroundColor:"#304FFE"
   },
   search: {
+    paddingLeft:'60px',
+    paddingRight:'20px',
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: "5.000em",
+      marginLeft: "14.000em",
       width: 'auto',
       padding:"0.500em",
       paddingRight:"4.125em",
@@ -68,6 +66,10 @@ const styles = theme => ({
     color: 'inherit',
     width: '100%',
   },
+  NavButton:{
+    paddingLeft:'60px',
+    paddingRight:'60px'
+  }
 });
 
 const NavButton = withStyles({
@@ -106,6 +108,7 @@ class TabsWrappedLabel extends React.Component {
         <AppBar position="static" style={{ flexDirection: 'row' }} >
                   <NavButton
                     onClick={() => { this.props.history.push("/") }}
+                    className={classes.NavButton}
                   >
                   Startseite
                   </NavButton>
@@ -113,6 +116,7 @@ class TabsWrappedLabel extends React.Component {
                   aria-owns={currentMenu === 'about-us-menu' ? 'about-us-menu' : undefined}
                   aria-haspopup="true"
                   onClick={this.handleClick('about-us-menu')}
+                  className={classes.NavButton}
                 >
                   Über uns
                 </NavButton>
@@ -152,6 +156,7 @@ class TabsWrappedLabel extends React.Component {
                   aria-owns={currentMenu === 'abt-menu' ? 'abt-menu' : undefined}
                   aria-haspopup="true"
                   onClick={this.handleClick('abt-menu')}
+                  className={classes.NavButton}
                 >
                   Abteilung
                 </NavButton>
@@ -171,11 +176,12 @@ class TabsWrappedLabel extends React.Component {
                   }}>Basketball</MenuItem>
                 </Menu>
                 <NavButton
+                className={classes.NavButton}
                 >
                   Kalender
                 </NavButton>
                 <NavButton
-                  
+                className={classes.NavButton}
                 >
                   Login
                 </NavButton>
