@@ -136,7 +136,7 @@ class TabsWrappedLabel extends React.Component {
                   }}>Gemeinde Baierbrunn</MenuItem>
                     <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/vorstand")
                   }}>Vorstand</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
@@ -174,6 +174,10 @@ class TabsWrappedLabel extends React.Component {
                     this.handleClose()
                     this.props.history.push("/basketball")
                   }}>Basketball</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/leichtathletik")
+                  }}>Leichtatlektik</MenuItem>
                 </Menu>
                 <NavButton
                 className={classes.NavButton}

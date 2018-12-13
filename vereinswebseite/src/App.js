@@ -7,7 +7,11 @@ import Menu from './components/Menu'
 import Startseite from './pages/startseite'
 import AbtBadminton from './pages/abt-badminton'
 import AbtBasketball from './pages/abt-basketball'
-// import Gallery from './pages/image-gallery';
+import Leichtathletik from './pages/abtLeichtathletik'
+// import Vorstand from './pages/ueber-uns/vorstand'
+// import Impressum from './pages/ueber-uns/impressum'
+
+//import Gallery from './pages/image-gallery';
 
 
 
@@ -33,6 +37,9 @@ class App extends Component {
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
+          {/* <Route path="/vorstand/" component={Vorstand}/> 
+          <Route path="/impressum/" component={Impressum} />  */}
+          <Route path="/leichtathletik/" component={Leichtathletik} />
         </div>
         <footer className="footer">
           <div class="wrapper">
