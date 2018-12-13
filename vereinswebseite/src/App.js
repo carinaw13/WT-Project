@@ -7,16 +7,11 @@ import Menu from './components/Menu'
 import Startseite from './pages/startseite'
 import AbtBadminton from './pages/abt-badminton'
 import AbtBasketball from './pages/abt-basketball'
-<<<<<<< HEAD
-import Leichtathletik from './pages/abtLeichtathletik'
+import Login from './containers/Login'
 // import Vorstand from './pages/ueber-uns/vorstand'
 // import Impressum from './pages/ueber-uns/impressum'
-
+//import Leichtathletik from './pages/abtLeichtathletik'
 //import Gallery from './pages/image-gallery';
-=======
-import Login from "./containers/Login";
-// import Gallery from './pages/image-gallery';
->>>>>>> Carina
 
 
 
@@ -41,13 +36,10 @@ class App extends Component {
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
-<<<<<<< HEAD
+          <Route path="/login" exact component={Login} />
           {/* <Route path="/vorstand/" component={Vorstand}/> 
           <Route path="/impressum/" component={Impressum} />  */}
-          <Route path="/leichtathletik/" component={Leichtathletik} />
-=======
-          <Route path="/login" exact component={Login} />
->>>>>>> Carina
+          {/* <Route path="/leichtathletik/" component={Leichtathletik} /> */}
         </div>
         <footer className="footer">
           <div class="wrapper">
