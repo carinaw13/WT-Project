@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 
 
-class AbtBasketball extends Component {
+class AbtSki extends Component {
     render() {
         return (
             <div class="abt-mainbody-content">
@@ -20,7 +20,7 @@ class AbtBasketball extends Component {
                     <br />
                         Telefon: 089-45345023
                     <br />
-                        E-Mail:
+                        E-Mail:&nbsp;
                     <span>
                             <a href="mailto:tobiasrapp@t-online.de">tobiasxrapp@t-online.de</a>
                         </span>
@@ -31,4 +31,4 @@ class AbtBasketball extends Component {
     }
 }
 
-export default AbtBasketball;
+export default AbtSki;

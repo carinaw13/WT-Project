@@ -16,7 +16,7 @@ class AbtBasketball extends Component {
                         <br />
                         Mobil: 0171 209 55 84
                         <br />
-                        E-Mail:
+                        E-Mail:&nbsp;
                     <span>
                             <a href="mailto:basketball@sc-baierbrunn.de">basketball@sc-baierbrunn.de</a>
                         </span>
