@@ -182,6 +182,14 @@ class TabsWrappedLabel extends React.Component {
                     this.handleClose()
                     this.props.history.push("/leichtathletik")
                   }}>Leichtatlektik</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/ski")
+                  }}>Ski</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/stockschützen")
+                  }}>Stockschützen</MenuItem>
                 </Menu>
                 <NavButton
                 className={classes.NavButton}
