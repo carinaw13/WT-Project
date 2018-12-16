@@ -8,7 +8,7 @@ class Startseite extends Component {
         return (
             <div class="abt-mainbody-content">
                 <div class="page-header">
-                    <h1>YoLO</h1>
+                    <h1>Neuigkeiten des Vereins...</h1>
                 </div>
             </div>
         );

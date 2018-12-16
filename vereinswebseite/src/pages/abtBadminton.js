@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import '../App.css'
 
 
 class AbtBadminton extends Component {
@@ -16,7 +16,7 @@ class AbtBadminton extends Component {
                         <br />
                         Telefon: 089-7930289
                         <br />
-                        E-Mail:
+                        E-Mail:&nbsp;
                         <span>
                             <a href="mailto:badminton@sc-baierbrunn.de">badminton@sc-baierbrunn.de</a>
                         </span>

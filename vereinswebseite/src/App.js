@@ -5,9 +5,16 @@ import logo from './img/RZ_Logo_Baierbrunn.png'
 
 import Menu from './components/Menu'
 import Startseite from './pages/startseite'
-import AbtBadminton from './pages/abt-badminton'
-import AbtBasketball from './pages/abt-basketball'
-// import Gallery from './pages/image-gallery';
+import AbtBadminton from './pages/abtBadminton'
+import AbtBasketball from './pages/abtBasketball'
+import AbtLeichtathletik from './pages/abtLeichtathletik'
+import AbtSki from './pages/abtSki'
+import AbtStockschützen from './pages/abtStockschützen'
+import Login from './containers/Login'
+// import Vorstand from './pages/ueber-uns/vorstand'
+// import Impressum from './pages/ueber-uns/impressum'
+//import Leichtathletik from './pages/abtLeichtathletik'
+//import Gallery from './pages/image-gallery';
 
 
 
@@ -26,13 +33,19 @@ class App extends Component {
           </p>
           <h1 style={{paddingTop: "0.5em", paddingLeft:"3.000em", fontSize:"3em"}}> <i> SportClub Baierbrunn e.V.</i> </h1>
           <h2 style={{paddingLeft: "9.000em",fontSize:"2em"}}> <i> Spass am Sport </i> </h2>
-          </div> 
+          </div>
           </header>
           <Menu />
-          {/* <Gallery/> */}
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
+          <Route path="/leichtathletik" component={AbtLeichtathletik} />
+          <Route path="/ski" component={AbtSki}/>
+          <Route path="/stockschützen" component={AbtStockschützen} />
+          <Route path="/login" exact component={Login} />
+          {/* <Route path="/vorstand/" component={Vorstand}/> 
+          <Route path="/impressum/" component={Impressum} />  */}
+          {/* <Route path="/leichtathletik/" component={Leichtathletik} /> */}
         </div>
         <footer className="footer">
           <div class="wrapper">

@@ -21,6 +21,7 @@ function TabContainer(props) {
   );
 }
 
+
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
 };
@@ -69,7 +70,10 @@ const styles = theme => ({
   NavButton:{
     paddingLeft:'60px',
     paddingRight:'60px'
-  }
+  },
+  typography: {
+    margin: theme.spacing.unit * 2,
+  },
 });
 
 const NavButton = withStyles({
@@ -136,7 +140,7 @@ class TabsWrappedLabel extends React.Component {
                   }}>Gemeinde Baierbrunn</MenuItem>
                     <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/vorstand")
                   }}>Vorstand</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
@@ -174,6 +178,18 @@ class TabsWrappedLabel extends React.Component {
                     this.handleClose()
                     this.props.history.push("/basketball")
                   }}>Basketball</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/leichtathletik")
+                  }}>Leichtatlektik</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/ski")
+                  }}>Ski</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/stockschützen")
+                  }}>Stockschützen</MenuItem>
                 </Menu>
                 <NavButton
                 className={classes.NavButton}
@@ -181,11 +197,24 @@ class TabsWrappedLabel extends React.Component {
                   Kalender
                 </NavButton>
                 <NavButton
-                className={classes.NavButton}
+                  aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
+                  aria-haspopup="true"
+                  onClick={this.handleClick('login-menu')}
+                  className={classes.NavButton}
                 >
                   Login
                 </NavButton>
-                
+                <Menu
+                  id="login-menu"
+                  anchorEl={anchorEl}
+                  open={currentMenu === 'login-menu'}
+                  onClose={this.handleClose}
+                > 
+                <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/login")
+                  }}>Einloggen</MenuItem>
+                  </Menu>    
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
