@@ -50,3 +50,11 @@ footer{
     transform: rotate(360deg);
   }
 }
+
+
+
+/*css für die Abteilungs-Seiten*/
+.abt-mainbody-content {
+  margin: 0 100px;
+  text-align: left;
+}
