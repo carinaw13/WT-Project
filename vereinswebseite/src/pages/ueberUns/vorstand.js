@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+//import './App.css'
 /* import NavBar from './components/NavBar'*/
 
 
@@ -10,7 +10,7 @@ class Vorstand extends Component {
         <div class="ueberUns-mainbody-content">
             <div class="page-header">
                 <h1>Vorstand</h1>
-                <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/Vorstandsmitglieder.jpg")} 
+                <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/Vorstandsmitglieder.jpg")} 
                  alt={"Vorstandsmitglieder"}/><br></br>
             </div>            
 
@@ -18,7 +18,7 @@ class Vorstand extends Component {
               
               <h3>1. Vorsitzender</h3>
              
-              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/GeroldWehr.jpg")} 
+              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/GeroldWehr.jpg")} 
               alt={"Gerold Wehr"}/><br></br>
              
               <adress>
@@ -38,7 +38,7 @@ class Vorstand extends Component {
             <div class="mitglied">
               <h3>2. Vorsitzender</h3>
              
-              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/AlexanderLechner.jpg")}
+              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/AlexanderLechner.jpg")}
               alt={"Alexander Lechner"}/><br></br>
             
              <adress>
@@ -57,7 +57,7 @@ class Vorstand extends Component {
              <div class="mitglied">             
               <h3>Mitgliederverwaltung</h3>
              
-              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/UweHarfich.jpg")} 
+              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/UweHarfich.jpg")} 
               alt={"Uwe Harfich"}/><br></br>
              
               <adress>
@@ -76,7 +76,7 @@ class Vorstand extends Component {
             <div class="mitglied">
               <h3>Schriftführer</h3>
              
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/images.jpg")} 
+             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/images.jpg")} 
              alt={"kein Bild"}/><br></br>
             
              <adress>
@@ -95,7 +95,7 @@ class Vorstand extends Component {
          <div class="mitglied">
           <h3>Jugendleiter</h3>
              
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/AndreasSchweitzer.jpg")} 
+             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/AndreasSchweitzer.jpg")} 
              alt={"Andreas Schweitzer"}/><br></br>
             
              <adress>
@@ -114,7 +114,7 @@ class Vorstand extends Component {
             <div class="mitglied">
               <h3>Beisitzer Technik</h3>
              
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/GerhardKreuzeder.jpg")} 
+             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/GerhardKreuzeder.jpg")} 
              alt={"Uwe Harfich"}/><br></br>
             
              <adress>
@@ -132,7 +132,7 @@ class Vorstand extends Component {
 
             <div class="mitglied">
              <h3>Beisitzer Sport</h3>
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/KonradKastl.jpg")} 
+             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/KonradKastl.jpg")} 
             alt={"Konrad Kastl"}/>
             
             <adress>
