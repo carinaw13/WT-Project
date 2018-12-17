@@ -23,7 +23,7 @@
   background-image: url(../src/img/Rasen.jpg);
 }
 
-footer{
+.footer{
   background-image: url(../src/img/Rasen.jpg); 
   padding:4px;
   padding-Left: 20px;
@@ -44,6 +44,13 @@ footer{
   to {
     transform: rotate(360deg);
   }
+}
+
+.buttonloggin{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 40px
 }
 
 

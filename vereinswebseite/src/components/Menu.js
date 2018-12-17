@@ -10,6 +10,8 @@ import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import Popover from '@material-ui/core/Popover'
+import TextField from '@material-ui/core/TextField';
 
 import "../App.css"
 
@@ -82,8 +84,8 @@ const NavButton = withStyles({
 class TabsWrappedLabel extends React.Component {
 
 
-  handleChange = (event, value) => {
-    this.setState({ value });
+  handleChange = name => (event, value, name ) => {
+    this.setState({ value, [name]: event.target.value });
   };
 
 
@@ -104,8 +106,8 @@ class TabsWrappedLabel extends React.Component {
 
   render() {
     const { classes } = this.props;
-    //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
+    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
@@ -200,21 +202,46 @@ class TabsWrappedLabel extends React.Component {
                   aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
                   aria-haspopup="true"
                   onClick={this.handleClick('login-menu')}
-                  className={classes.NavButton}
-                >
+                  className={classes.NavButton}>
                   Login
-                </NavButton>
-                <Menu
-                  id="login-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'login-menu'}
-                  onClose={this.handleClose}
-                > 
-                <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/login")
-                  }}>Einloggen</MenuItem>
-                  </Menu>    
+                  </NavButton>
+                <Popover
+                    id="simple-popper"
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={this.handleClose}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                    open={currentMenu === 'login-menu'}
+                  >
+                    <Typography className={classes.typography}>
+                    <TextField
+                      id="standard-name"
+                      label="Benutzername"
+                      value={this.state.name}
+                      onChange={this.handleChange('name')}
+                      margin="normal"
+                    />
+                    <br></br>
+                    <TextField
+                      id="standard-name"
+                      label="Passwort"
+                      value={this.state.name}
+                      onChange={this.handleChange('name')}
+                      margin="normal"
+                    />
+                    <br></br>
+                    <Button style={{ paddingTop: "10px", paddingRight: "10px", paddingLeft:"40px", paddingBottom:"10px" }} >
+                      Einloggen
+                    </Button>
+                   </Typography>
+                  </Popover>
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
