@@ -1,4 +1,13 @@
 import React, { Component } from 'react'
+import Vorstandsmitglieder from "../../img/Vorstandsmitglieder.jpg"
+import GeroldWehr from "../../img/GeroldWehr.jpg"
+import AlexanderLechner from "../../img/AlexanderLechner.jpg"
+import UweHarfich from "../../img/UweHarfich.jpg"
+import keinBild from "../../img/images.jpg"
+import AndreasSchweitzer from "../../img/AndreasSchweitzer.jpg"
+import GerhardKreuzeder from "../../img/GerhardKreuzeder.jpg"
+import KonradKastl from "../../img/KonradKastl.jpg"
+
 //import './App.css'
 /* import NavBar from './components/NavBar'*/
 
@@ -10,16 +19,16 @@ class Vorstand extends Component {
         <div class="ueberUns-mainbody-content">
             <div class="page-header">
                 <h1>Vorstand</h1>
-                <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/Vorstandsmitglieder.jpg")} 
-                 alt={"Vorstandsmitglieder"}/><br></br>
+                <img src = {Vorstandsmitglieder} alt={"Vorstandsmitglieder"}/>
+                 <br></br>
             </div>            
 
             <div class="mitglied">
               
               <h3>1. Vorsitzender</h3>
              
-              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/GeroldWehr.jpg")} 
-              alt={"Gerold Wehr"}/><br></br>
+              <img src = {GeroldWehr} alt={"Gerold Wehr"}/>
+              <br></br>
              
               <adress>
                 Gerold Wehr<br></br>
@@ -38,8 +47,8 @@ class Vorstand extends Component {
             <div class="mitglied">
               <h3>2. Vorsitzender</h3>
              
-              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/AlexanderLechner.jpg")}
-              alt={"Alexander Lechner"}/><br></br>
+              <img src = {AlexanderLechner} alt={"Alexander Lechner"}/>
+              <br></br>
             
              <adress>
                Alexander Lechner<br></br>
@@ -48,7 +57,7 @@ class Vorstand extends Component {
                <br></br>
                Tel: 089-74442870<br></br>
                Mobil: 0160-97627684<br></br>
-               <a href="mailto:zweiter_vorsitzender@sc-baierbrunn.de">zweiter_vorsitzender@sc-baierbrunn.de</a><br></br>
+               <a href="mailto:zweiter_vorsitzender@sc-baierbrunn.de"> zweiter_vorsitzender@sc-baierbrunn.de</a><br></br>
                <br></br>
                <br></br>
              </adress>
@@ -57,8 +66,8 @@ class Vorstand extends Component {
              <div class="mitglied">             
               <h3>Mitgliederverwaltung</h3>
              
-              <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/UweHarfich.jpg")} 
-              alt={"Uwe Harfich"}/><br></br>
+              <img src = {UweHarfich} alt={"Uwe Harfich"}/>
+              <br></br>
              
               <adress>
                 Uwe Harfich<br></br>
@@ -76,8 +85,8 @@ class Vorstand extends Component {
             <div class="mitglied">
               <h3>Schriftführer</h3>
              
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/images.jpg")} 
-             alt={"kein Bild"}/><br></br>
+              <img src = {keinBild} alt={"kein Bild"}/>
+             <br></br>
             
              <adress>
                Frank Weyers<br></br>
@@ -95,8 +104,8 @@ class Vorstand extends Component {
          <div class="mitglied">
           <h3>Jugendleiter</h3>
              
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/AndreasSchweitzer.jpg")} 
-             alt={"Andreas Schweitzer"}/><br></br>
+             <img src = {AndreasSchweitzer} alt={"Andreas Schweitzer"}/>
+             <br></br>
             
              <adress>
                Andreas Schweitzer<br></br>
@@ -114,8 +123,8 @@ class Vorstand extends Component {
             <div class="mitglied">
               <h3>Beisitzer Technik</h3>
              
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/GerhardKreuzeder.jpg")} 
-             alt={"Uwe Harfich"}/><br></br>
+              <img src = {GerhardKreuzeder} alt={"Gerhard Kreuzeder"}/>
+             <br></br>
             
              <adress>
                Gerhard Kreuzeder<br></br>
@@ -132,8 +141,7 @@ class Vorstand extends Component {
 
             <div class="mitglied">
              <h3>Beisitzer Sport</h3>
-             <img src={require("E:/FH INF/Sem3/WT/WT-Project/vereinswebseite/src/img/KonradKastl.jpg")} 
-            alt={"Konrad Kastl"}/>
+             <img src = {KonradKastl} alt={"Konrad Kastl"}/>
             
             <adress>
               Konrad Kastl<br></br>
