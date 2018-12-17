@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD:vereinswebseite/src/pages/ueber-uns/vorstand.js
 
-=======
->>>>>>> 960163282dbf17266cfe3809d3c70f8ae21c659e
+
 import Vorstandsmitglieder from "../../img/Vorstandsmitglieder.jpg"
 import GeroldWehr from "../../img/GeroldWehr.jpg"
 import AlexanderLechner from "../../img/AlexanderLechner.jpg"
@@ -15,10 +11,6 @@ import GerhardKreuzeder from "../../img/GerhardKreuzeder.jpg"
 import KonradKastl from "../../img/KonradKastl.jpg"
 
 //import './App.css'
-<<<<<<< HEAD
-=======
->>>>>>> master:vereinswebseite/src/pages/ueberUns/vorstand.js
->>>>>>> 960163282dbf17266cfe3809d3c70f8ae21c659e
 /* import NavBar from './components/NavBar'*/
 
 

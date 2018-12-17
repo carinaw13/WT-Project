@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-import React, { Component } from 'react'
+import React from 'react'
 
-=======
->>>>>>> 960163282dbf17266cfe3809d3c70f8ae21c659e
-import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
@@ -15,10 +9,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import "../App.css";
-<<<<<<< HEAD
-=======
->>>>>>> master
->>>>>>> 960163282dbf17266cfe3809d3c70f8ae21c659e
 
 const CustomTableCell = withStyles(theme => ({
   head: {
