@@ -5,15 +5,17 @@ import logo from './img/RZ_Logo_Baierbrunn.png'
 
 import Menu from './components/Menu'
 import Startseite from './pages/startseite'
-import AbtBadminton from './pages/abt-badminton'
-import AbtBasketball from './pages/abt-basketball'
+import AbtBadminton from './pages/abtBadminton'
+import AbtBasketball from './pages/abtBasketball'
+import AbtLeichtathletik from './pages/abtLeichtathletik'
+import AbtSki from './pages/abtSki'
+import AbtStockschützen from './pages/abtStockschützen'
 import Login from './containers/Login'
-import Leichtathletik from './pages/abtLeichtathletik'
 // import Vorstand from './pages/ueber-uns/vorstand'
-import Impressum from './pages/ueber-uns/impressum'
-
+//import Impressum from './pages/ueber-uns/impressum'
+import Vorstand from './pages/ueberUns/vorstand'
+import Leichtathletik from './pages/abtLeichtathletik'
 //import Gallery from './pages/image-gallery';
-
 
 
 
@@ -37,10 +39,16 @@ class App extends Component {
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
+          <Route path="/leichtathletik" component={AbtLeichtathletik} />
+          <Route path="/ski" component={AbtSki}/>
+          <Route path="/stockschützen" component={AbtStockschützen} />
           <Route path="/login" exact component={Login} />
           {/* <Route path="/vorstand/" component={Vorstand}/>  */}
-          <Route path="/impressum/" component={Impressum} /> 
+          {/* <Route path="/impressum/" component={Impressum} />  */}
           <Route path="/leichtathletik/" component={Leichtathletik} />
+          <Route path="/vorstand/" component={Vorstand}/> 
+         {/* <Route path="/impressum/" component={Impressum} />  */}
+          {/* <Route path="/leichtathletik/" component={Leichtathletik} /> */}
         </div>
         <footer className="footer">
           <div class="wrapper">
