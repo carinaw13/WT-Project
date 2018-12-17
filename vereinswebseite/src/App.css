@@ -1,32 +1,39 @@
 .App {
   text-align: center;
-   background-image: url(../src/img/Rasen.jpg);
+   /* background-image: url(../src/img/Rasen.jpg); */
+   min-height: 900px
   
 }
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
   height: 20vmin;
-  margin-left: 5em;
   background-image: url(../src/img/Rasen.jpg);
+  margin-left: -200px; 
+  margin-top: 15px;
+  margin-bottom: 10px
 }
 
 .App-header {
   background-color:white;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(0.3em + 2vmin);
-  font-weight: 500;
+  font-weight: 400;
   color: #1A237E;
-  padding-left: 20.000em; 
+  padding-left: 20.000em;
   background-image: url(../src/img/Rasen.jpg);
 }
 
 body{
   /* Wenn ich das background-image rausnehme, habe ich oben eine Leiste weiß, wenn ich aber das drin lass steht es im footer auch, wo ich es nicht haben will. */
-  background-image: url(../src/img/Rasen.jpg);
+  /* background-image: url(../src/img/Rasen.jpg); */
+}
+
+footer{
+  background-image: url(../src/img/Rasen.jpg); 
+  padding:4px;
+  padding-Left: 20px;
 }
 
 
@@ -42,4 +49,16 @@ body{
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+/*css für die Abteilungs-Seiten*/
+.abt-mainbody-content {
+  margin: 0 100px;
+  text-align: left;
+}
+
+li {
+  list-style-type: circle;
 }
