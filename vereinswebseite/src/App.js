@@ -5,13 +5,22 @@ import logo from './img/RZ_Logo_Baierbrunn.png'
 
 import Menu from './components/Menu'
 import Startseite from './pages/startseite'
-import AbtBadminton from './pages/abt-badminton'
-import AbtBasketball from './pages/abt-basketball'
+import AbtBadminton from './pages/abtBadminton'
+import AbtBasketball from './pages/abtBasketball'
+import AbtLeichtathletik from './pages/abtLeichtathletik'
+import AbtSki from './pages/abtSki'
+import AbtStockschützen from './pages/abtStockschützen'
 import Login from './containers/Login'
+<<<<<<< HEAD
 import Leichtathletik from './pages/abtLeichtathletik'
 // import Vorstand from './pages/ueber-uns/vorstand'
 import Impressum from './pages/ueber-uns/impressum'
 
+=======
+import Vorstand from './pages/ueberUns/vorstand'
+// import Impressum from './pages/ueber-uns/impressum'
+//import Leichtathletik from './pages/abtLeichtathletik'
+>>>>>>> master
 //import Gallery from './pages/image-gallery';
 
 
@@ -37,10 +46,19 @@ class App extends Component {
           <Route path="/" exact component={Startseite} />
           <Route path="/badminton/" component={AbtBadminton} />
           <Route path="/basketball/" component={AbtBasketball} />
+          <Route path="/leichtathletik" component={AbtLeichtathletik} />
+          <Route path="/ski" component={AbtSki}/>
+          <Route path="/stockschützen" component={AbtStockschützen} />
           <Route path="/login" exact component={Login} />
+<<<<<<< HEAD
           {/* <Route path="/vorstand/" component={Vorstand}/>  */}
           <Route path="/impressum/" component={Impressum} /> 
           <Route path="/leichtathletik/" component={Leichtathletik} />
+=======
+          <Route path="/vorstand/" component={Vorstand}/> 
+         {/* <Route path="/impressum/" component={Impressum} />  */}
+          {/* <Route path="/leichtathletik/" component={Leichtathletik} /> */}
+>>>>>>> master
         </div>
         <footer className="footer">
           <div class="wrapper">
