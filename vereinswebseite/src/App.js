@@ -11,7 +11,7 @@ import AbtLeichtathletik from './pages/abtLeichtathletik'
 import AbtSki from './pages/abtSki'
 import AbtStockschützen from './pages/abtStockschützen'
 import Login from './containers/Login'
-// import Vorstand from './pages/ueber-uns/vorstand'
+import Vorstand from './pages/ueberUns/vorstand'
 // import Impressum from './pages/ueber-uns/impressum'
 //import Leichtathletik from './pages/abtLeichtathletik'
 //import Gallery from './pages/image-gallery';
@@ -43,8 +43,8 @@ class App extends Component {
           <Route path="/ski" component={AbtSki}/>
           <Route path="/stockschützen" component={AbtStockschützen} />
           <Route path="/login" exact component={Login} />
-          {/* <Route path="/vorstand/" component={Vorstand}/> 
-          <Route path="/impressum/" component={Impressum} />  */}
+          <Route path="/vorstand/" component={Vorstand}/> 
+         {/* <Route path="/impressum/" component={Impressum} />  */}
           {/* <Route path="/leichtathletik/" component={Leichtathletik} /> */}
         </div>
         <footer className="footer">
