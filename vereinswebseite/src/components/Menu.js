@@ -156,6 +156,10 @@ class TabsWrappedLabel extends React.Component {
                   }}>Impressum</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
+                    this.props.history.push("/datenschutz")
+                  }}>Datenschutz</MenuItem>                  
+                  <MenuItem onClick={() => {
+                    this.handleClose()
                     this.props.history.push("/satzung")
                   }}>Satzung</MenuItem>
                   <MenuItem onClick={() => {

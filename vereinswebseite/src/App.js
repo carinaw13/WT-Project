@@ -16,6 +16,7 @@ import Gemeinde from './pages/ueberUns/gemeinde'
 import Kontakt from './pages/ueberUns/kontakt'
 import Impressum from './pages/ueberUns/impressum';
 import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
+import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 
@@ -50,6 +51,7 @@ class App extends Component {
           <Route path="/kontakt/" component={Kontakt}/>
           <Route path="/impressum/" component={Impressum}/>
           <Route path="/unsereGeschichte/" component={unsereGeschichte}/>
+          <Route path="/datenschutz/" component={Datenschutz}/>
           <Route path="/satzung/" component={Satzung}/>
           <Route path="/ehrenordnung/" component={Ehrenordnung}/>
         </div>
