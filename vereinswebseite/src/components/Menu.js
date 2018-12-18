@@ -158,6 +158,10 @@ class TabsWrappedLabel extends React.Component {
                     this.handleClose()
                     this.props.history.push("/satzung")
                   }}>Satzung</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/ehrenordnung")
+                  }}>Ehrenordnung</MenuItem>                  
                   
 
                 </Menu>

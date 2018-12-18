@@ -17,6 +17,7 @@ import Kontakt from './pages/ueberUns/kontakt'
 import Impressum from './pages/ueberUns/impressum';
 import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 import Satzung from './pages/ueberUns/satzung';
+import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 
 
 
@@ -50,6 +51,7 @@ class App extends Component {
           <Route path="/impressum/" component={Impressum}/>
           <Route path="/unsereGeschichte/" component={unsereGeschichte}/>
           <Route path="/satzung/" component={Satzung}/>
+          <Route path="/ehrenordnung/" component={Ehrenordnung}/>
         </div>
         <footer className="footer">
           <div class="wrapper">
