@@ -15,7 +15,7 @@ import Vorstand from './pages/ueberUns/vorstand'
 import Gemeinde from './pages/ueberUns/gemeinde'
 import Kontakt from './pages/ueberUns/kontakt'
 import Impressum from './pages/ueberUns/impressum';
-
+import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 
 
 
@@ -47,6 +47,7 @@ class App extends Component {
           <Route path="/gemeinde/" component={Gemeinde}/>
           <Route path="/kontakt/" component={Kontakt}/>
           <Route path="/impressum/" component={Impressum}/>
+          <Route path="/unsereGeschichte/" component={unsereGeschichte}/>
         </div>
         <footer className="footer">
           <div class="wrapper">
