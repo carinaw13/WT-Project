@@ -12,6 +12,7 @@ import AbtSki from './pages/abtSki'
 import AbtStockschützen from './pages/abtStockschützen'
 import Login from './containers/Login'
 import Vorstand from './pages/ueberUns/vorstand'
+import Gemeinde from './pages/ueberUns/gemeinde'
 
 
 
@@ -41,6 +42,7 @@ class App extends Component {
           <Route path="/stockschützen" component={AbtStockschützen} />
           <Route path="/login" exact component={Login} />
           <Route path="/vorstand/" component={Vorstand}/>
+          <Route path="/gemeinde/" component={Gemeinde}/>
         </div>
         <footer className="footer">
           <div class="wrapper">

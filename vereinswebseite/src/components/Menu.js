@@ -136,7 +136,7 @@ class TabsWrappedLabel extends React.Component {
                   }}>Unsere Geschichte</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/gemeinde")
                   }}>Gemeinde Baierbrunn</MenuItem>
                     <MenuItem onClick={() => {
                     this.handleClose()
