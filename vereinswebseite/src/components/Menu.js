@@ -199,6 +199,12 @@ class TabsWrappedLabel extends React.Component {
                   Kalender
                 </NavButton>
                 <NavButton
+                    onClick={() => { this.props.history.push("/fotogalerie") }}
+                    className={classes.NavButton}
+                  >
+                  Fotogalerie
+                </NavButton>
+                <NavButton
                   aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
                   aria-haspopup="true"
                   onClick={this.handleClick('login-menu')}

@@ -66,3 +66,10 @@
 li {
   list-style-type: circle;
 }
+
+/*css für die Fotogalerie*/
+#galerie {
+  width: 60%;
+  margin: auto;
+  margin-top: 50px;
+}
