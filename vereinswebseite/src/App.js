@@ -19,6 +19,7 @@ import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
+import kalenderExtern from './pages/kalenderExtern';
 
 
 
@@ -54,6 +55,7 @@ class App extends Component {
           <Route path="/datenschutz/" component={Datenschutz}/>
           <Route path="/satzung/" component={Satzung}/>
           <Route path="/ehrenordnung/" component={Ehrenordnung}/>
+          <Route path="/kalenderExtern/" component={kalenderExtern}/>
         </div>
         <footer className="footer">
           <div class="wrapper">

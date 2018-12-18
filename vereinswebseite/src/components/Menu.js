@@ -215,6 +215,11 @@ class TabsWrappedLabel extends React.Component {
                   onClick={this.handleClick('login-menu')}
                   className={classes.NavButton}
                 >
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/kalenderExtern")
+                  }}>Kursplan</MenuItem>
+
                   Login
                 </NavButton>
                 <Menu
