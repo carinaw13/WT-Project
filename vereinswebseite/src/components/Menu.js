@@ -148,7 +148,7 @@ class TabsWrappedLabel extends React.Component {
                   }}>Mitglied werden</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/kontakt")
                   }}>Kontakt</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
