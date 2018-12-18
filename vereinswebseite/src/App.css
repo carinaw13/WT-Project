@@ -9,9 +9,15 @@
   /* animation: App-logo-spin infinite 20s linear; */
   height: 20vmin;
   background-image: url(../src/img/Rasen.jpg);
+<<<<<<< HEAD
   margin-left: -200px;
   margin-top: 15px;
   margin-bottom: 10px;
+=======
+  margin-left: -200px; 
+  margin-top: 5px;
+  margin-bottom: 10px
+>>>>>>> Carina
 }
 
 .App-header {
@@ -47,12 +53,15 @@
   }
 }
 
+<<<<<<< HEAD
 .buttonloggin {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 40px;
 }
+=======
+>>>>>>> Carina
 
 /*css für die Abteilungs-Seiten*/
 .abt-mainbody-content {
