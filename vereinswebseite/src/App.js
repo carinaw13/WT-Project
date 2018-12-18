@@ -14,6 +14,7 @@ import Login from './containers/Login'
 import Vorstand from './pages/ueberUns/vorstand'
 import Gemeinde from './pages/ueberUns/gemeinde'
 import Kontakt from './pages/ueberUns/kontakt'
+import Impressum from './pages/ueberUns/impressum';
 
 
 
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path="/vorstand/" component={Vorstand}/>
           <Route path="/gemeinde/" component={Gemeinde}/>
           <Route path="/kontakt/" component={Kontakt}/>
+          <Route path="/impressum/" component={Impressum}/>
         </div>
         <footer className="footer">
           <div class="wrapper">

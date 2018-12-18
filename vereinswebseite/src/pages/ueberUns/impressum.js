@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-/* import NavBar from './components/NavBar'*/
 
 
 class Impressum extends Component {
@@ -28,18 +27,19 @@ class Impressum extends Component {
               <br></br>
               <br></br>
 
-              <h4>Website-Administration und -Entwicklung</h4>
+              <h5>Website-Administration und -Entwicklung</h5>
               <adress>
               <p>Carina Wehr<br></br><a href="carina.wehr@sc-baierbrunn.de">carina.wehr@sc-baierbrunn.de</a></p><br></br>
+              <br></br>
               </adress>
 
             </div>
 
             <div class="impressum_copyright">
-              <h5>Copyright</h5>
+              <h4>Copyright</h4>
               <p>&copy; 2018 SportClub Baierbrunn e. V. - Alle Rechte vorbehalten</p><br></br>
 
-              <h5>Inhalt des Onlineangebotes</h5>
+              <h4>Inhalt des Onlineangebotes</h4>
               <p>Der Anbieter übernimmt keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit 
                 oder Qualität der bereitgestellten Informationen. Haftungsansprüche gegen den Anbieter, 
                 welche sich auf Schäden materieller oder ideeller Art beziehen, die durch die Nutzung 
@@ -52,7 +52,7 @@ class Impressum extends Component {
                 zeitweise oder endgültig einzustellen.</p><br></br>
               
             
-              <h5>Verweise und Links</h5>
+              <h4>Verweise und Links</h4>
               <p>Bei direkten oder indirekten Verweisen auf fremde Internetseiten ("Links"), 
                 die außerhalb des Verantwortungsbereiches des Anbieters liegen, würde eine
                  Haftungsverpflichtung ausschließlich in dem Fall in Kraft treten, in dem 
@@ -71,7 +71,7 @@ class Impressum extends Component {
                 allein der Anbieter der Seite, auf welche verwiesen wurde, nicht derjenige, der über 
                 Links auf die jeweilige Veröffentlichung lediglich verweist.</p><br></br>
 
-              <h5>Urheber- und Kennzeichenrecht</h5>
+              <h4>Urheber- und Kennzeichenrecht</h4>
               <p>Das Copyright für veröffentlichte, vom Anbieter selbst erstellte Objekte bleibt allein
                 beim Anbieter der Seiten. Eine Vervielfältigung oder Verwendung solcher Grafiken, 
                 Tondokumente, Videosequenzen und Texte in anderen elektronischen oder gedruckten 
@@ -85,7 +85,7 @@ class Impressum extends Component {
                 eingetragenen Eigentümer. Allein aufgrund der bloßen Nennung ist nicht der Schluß zu ziehen, 
                 dass Markenzeichen nicht durch Rechte Dritter geschützt sind.</p><br></br>
 
-              <h5>Datenschutz</h5>
+              <h4>Datenschutz</h4>
               <p>Sofern innerhalb des Internetangebotes die Möglichkeit zur Eingabe persönlicher oder 
                 geschäftlicher Daten (Emailadressen, Namen, Anschriften) besteht, so erfolgt die 
                 Preisgabe dieser Daten seitens des Nutzers auf ausdrücklich freiwilliger Basis. 
@@ -93,7 +93,7 @@ class Impressum extends Component {
                 möglich und zumutbar - auch ohne Angabe solcher Daten bzw. unter Angabe anonymisierter 
                 Daten oder eines Pseudonyms gestattet.</p> <br></br>
 
-              <h5>Rechtswirksamkeit dieses Haftungsausschlusses</h5>
+              <h4>Rechtswirksamkeit dieses Haftungsausschlusses</h4>
               <p>Dieser Haftungsausschluss ist als Teil des Internetangebotes zu betrachten, von dem aus 
                 auf diese Seite verwiesen wurde. Sofern Teile oder einzelne Formulierungen dieses Textes 
                 der geltenden Rechtslage nicht, nicht mehr oder nicht vollständig entsprechen sollten, 

@@ -52,13 +52,14 @@ ul{
     }
 
 .impressum_adresse {
-margin-left: 250px;
-font-size: 16px;
+text-align: left;
+margin-left: 150px;
+font-size: 14px;
 }
 
 .impressum_copyright {
-  margin-left: 250px;
-  width: 70%;
+  margin-left: 150px;
+  width: 75%;
   text-align: justify;
   font-size: 14px;
   }
