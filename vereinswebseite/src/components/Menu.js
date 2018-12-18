@@ -237,7 +237,7 @@ class TabsWrappedLabel extends React.Component {
                       margin="normal"
                     />
                     <br></br>
-                    <Button style={{ paddingTop: "10px", paddingRight: "10px", paddingLeft:"40px", paddingBottom:"10px" }} >
+                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }} >
                       Einloggen
                     </Button>
                    </Typography>
