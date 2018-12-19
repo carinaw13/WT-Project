@@ -108,6 +108,8 @@ class TabsWrappedLabel extends React.Component {
     const { classes } = this.props;
     //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
+    const open = Boolean(anchorEl);
+
 
     return (
       <div className={classes.root}>
@@ -233,17 +235,43 @@ class TabsWrappedLabel extends React.Component {
                 >
                   Login
                 </NavButton>
-                <Menu
-                  id="login-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'login-menu'}
-                  onClose={this.handleClose}
-                > 
-                <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/login")
-                  }}>Einloggen</MenuItem>
-                  </Menu>    
+                <Popover
+                    id="simple-popper"
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={this.handleClose}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                    open={currentMenu === 'login-menu'}
+                  >
+                    <Typography className={classes.typography}>
+                    <TextField
+                      id="standard-name"
+                      label="Benutzername"
+                      value={this.state.name}
+                      onChange={this.handleChange('name')}
+                      margin="normal"
+                    />
+                    <br></br>
+                    <TextField
+                      id="standard-name"
+                      label="Passwort"
+                      value={this.state.name}
+                      onChange={this.handleChange('name')}
+                      margin="normal"
+                    />
+                    <br></br>
+                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }} >
+                      Einloggen
+                    </Button>
+                   </Typography>
+                  </Popover>
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
