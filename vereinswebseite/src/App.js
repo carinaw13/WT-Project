@@ -20,6 +20,7 @@ import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 import Kursplan from './pages/kalenderExtern';
+import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
 
 class App extends Component {
@@ -74,6 +75,7 @@ class App extends Component {
             <Route path="/satzung/" component={Satzung}/>
             <Route path="/ehrenordnung/" component={Ehrenordnung}/>
             <Route path="/kalenderExtern/" component={Kursplan}/>
+            <Route path="/kalenderIntern/" component={Kalender}/>
           </div>
           <footer className="footer">
             <div class="wrapper">

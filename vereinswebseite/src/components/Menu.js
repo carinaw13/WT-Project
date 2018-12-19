@@ -226,6 +226,10 @@ class TabsWrappedLabel extends React.Component {
                     this.handleClose()
                     this.props.history.push("/kalenderExtern")
                   }}>Kursplan</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/kalenderIntern")
+                  }}>Kalender</MenuItem>
                   </Menu>
                 <NavButton
                   aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
