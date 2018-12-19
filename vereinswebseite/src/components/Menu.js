@@ -38,8 +38,7 @@ const styles = theme => ({
     paddingLeft:"3.125em",
     paddingRight:"3.125em",
     fontSize:"0.938em",
-    backgroundColor:"#304FFE"
-  },
+  }, 
   search: {
     paddingLeft:'60px',
     paddingRight:'20px',
@@ -71,7 +70,8 @@ const styles = theme => ({
   },
   NavButton:{
     paddingLeft:'60px',
-    paddingRight:'60px'
+    paddingRight:'60px',
+    color:"white"
   },
   typography: {
     margin: theme.spacing.unit * 2,
@@ -113,7 +113,7 @@ class TabsWrappedLabel extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" style={{ flexDirection: 'row' }} >
+        <AppBar position="static" style={{ flexDirection: 'row', backgroundColor:"#08085e" }} >
                   <NavButton
                     onClick={() => { this.props.history.push("/") }}
                     className={classes.NavButton}

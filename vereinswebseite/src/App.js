@@ -46,12 +46,10 @@ class App extends Component {
                     fontSize: "3em"
                   }}
                 >
-                  {" "}
-                  <i> SportClub Baierbrunn e.V.</i>{" "}
+                  <i> SportClub Baierbrunn e.V.</i>
                 </h1>
                 <h2 style={{ paddingLeft: "9.000em", fontSize: "2em" }}>
-                  {" "}
-                  <i> Spass am Sport </i>{" "}
+                  <i> Spass am Sport </i>
                 </h2>
               </div>
             </header>
@@ -79,9 +77,8 @@ class App extends Component {
           </div>
           <footer className="footer">
             <div class="wrapper">
-              <a href="x.html">Home</a> | <a href="y.html">Kontakt</a>|{" "}
-              <a href="z.html">Impressum</a>
-              <p>© 2018 by selfHTML</p>
+              <a href="/">Home</a> | <a href="/kontakt/">Kontakt</a>| <a href="/impressum/">Impressum</a>
+              <p className="p"> © 2018 by selfHTML</p>
             </div>
           </footer>
           </div>
