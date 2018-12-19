@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
+import Iframe from 'react-iframe'
 
+//  install "npm i react-iframe" for react iframe working
 
 class Gemeinde extends Component {
   render() {
@@ -8,7 +9,9 @@ class Gemeinde extends Component {
       
       <div class="ueberUns-mainbody-content">
       <div class="page-header">
-          <h1><a href="http://www.baierbrunn.de/">Gemeinde Baierbrunn</a></h1> 
+      <Iframe url="http://www.baierbrunn.de/"
+        allowFullScreen/>
+        
       </div> 
       </div>
 

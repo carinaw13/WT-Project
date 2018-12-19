@@ -106,8 +106,8 @@ class TabsWrappedLabel extends React.Component {
 
   render() {
     const { classes } = this.props;
+    //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
-    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
@@ -134,11 +134,11 @@ class TabsWrappedLabel extends React.Component {
                 >
                   <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/badminton")
+                    this.props.history.push("/unsereGeschichte")
                   }}>Unsere Geschichte</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/gemeinde")
                   }}>Gemeinde Baierbrunn</MenuItem>
                     <MenuItem onClick={() => {
                     this.handleClose()
@@ -150,12 +150,25 @@ class TabsWrappedLabel extends React.Component {
                   }}>Mitglied werden</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/kontakt")
                   }}>Kontakt</MenuItem>
                   <MenuItem onClick={() => {
                     this.handleClose()
-                    this.props.history.push("/basketball")
+                    this.props.history.push("/impressum")
                   }}>Impressum</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/datenschutz")
+                  }}>Datenschutz</MenuItem>                  
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/satzung")
+                  }}>Satzung</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/ehrenordnung")
+                  }}>Ehrenordnung</MenuItem>                  
+                  
 
                 </Menu>
                 <NavButton
@@ -199,55 +212,29 @@ class TabsWrappedLabel extends React.Component {
                   Kalender
                 </NavButton>
                 <NavButton
-                    onClick={() => { this.props.history.push("/fotogalerie") }}
-                    className={classes.NavButton}
-                  >
-                  Fotogalerie
-                </NavButton>
-                <NavButton
                   aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
                   aria-haspopup="true"
                   onClick={this.handleClick('login-menu')}
-                  className={classes.NavButton}>
+                  className={classes.NavButton}
+                >
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/kalenderExtern")
+                  }}>Kursplan</MenuItem>
+
                   Login
-                  </NavButton>
-                <Popover
-                    id="simple-popper"
-                    open={open}
-                    anchorEl={anchorEl}
-                    onClose={this.handleClose}
-                    anchorOrigin={{
-                      vertical: 'bottom',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'center',
-                    }}
-                    open={currentMenu === 'login-menu'}
-                  >
-                    <Typography className={classes.typography}>
-                    <TextField
-                      id="standard-name"
-                      label="Benutzername"
-                      value={this.state.name}
-                      onChange={this.handleChange('name')}
-                      margin="normal"
-                    />
-                    <br></br>
-                    <TextField
-                      id="standard-name"
-                      label="Passwort"
-                      value={this.state.name}
-                      onChange={this.handleChange('name')}
-                      margin="normal"
-                    />
-                    <br></br>
-                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }} >
-                      Einloggen
-                    </Button>
-                   </Typography>
-                  </Popover>
+                </NavButton>
+                <Menu
+                  id="login-menu"
+                  anchorEl={anchorEl}
+                  open={currentMenu === 'login-menu'}
+                  onClose={this.handleClose}
+                > 
+                <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/login")
+                  }}>Einloggen</MenuItem>
+                  </Menu>    
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

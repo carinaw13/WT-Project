@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import './App.css'
-
+import Iframe from 'react-iframe'
 
 class Satzung extends Component {
   render() {
     return (
       <div class="ueberUns-mainbody-content">
       <div class="page-header">
-          <h1><a href="/web/viewer.html?file=Satzung.pdf">Satzung</a></h1> 
+          <Iframe url = "/web/viewer.html?file=Satzung.pdf">
+           allowFullScreen/></Iframe>
       </div> 
       </div>
     );

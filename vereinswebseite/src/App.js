@@ -1,7 +1,27 @@
-import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.css";
-import logo from "./img/RZ_Logo_Baierbrunn.png";
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route } from "react-router-dom"
+import './App.css'
+import logo from './img/RZ_Logo_Baierbrunn.png'
+
+import Menu from './components/Menu'
+import Startseite from './pages/startseite'
+import AbtBadminton from './pages/abtBadminton'
+import AbtBasketball from './pages/abtBasketball'
+import AbtLeichtathletik from './pages/abtLeichtathletik'
+import AbtSki from './pages/abtSki'
+import AbtStockschützen from './pages/abtStockschützen'
+import Login from './containers/Login'
+import Vorstand from './pages/ueberUns/vorstand'
+import Gemeinde from './pages/ueberUns/gemeinde'
+import Kontakt from './pages/ueberUns/kontakt'
+import Impressum from './pages/ueberUns/impressum';
+import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
+import Datenschutz from './pages/ueberUns/datenschutz';
+import Satzung from './pages/ueberUns/satzung';
+import Ehrenordnung from './pages/ueberUns/ehrenordnung';
+import kalenderExtern from './pages/kalenderExtern';
+
+
 
 import Menu from "./components/Menu";
 import Startseite from "./pages/startseite";
@@ -56,6 +76,16 @@ class App extends Component {
             <Route path="/login" exact component={Login} />
             <Route path="/vorstand/" component={Vorstand} />
             <Route path="/fotogalerie" component={Fotogalerie} />
+            <Route path="/login" exact component={Login} />
+            <Route path="/vorstand/" component={Vorstand}/>
+            <Route path="/gemeinde/" component={Gemeinde}/>
+            <Route path="/kontakt/" component={Kontakt}/>
+            <Route path="/impressum/" component={Impressum}/>
+            <Route path="/unsereGeschichte/" component={unsereGeschichte}/>
+            <Route path="/datenschutz/" component={Datenschutz}/>
+            <Route path="/satzung/" component={Satzung}/>
+            <Route path="/ehrenordnung/" component={Ehrenordnung}/>
+            <Route path="/kalenderExtern/" component={kalenderExtern}/>
           </div>
           <footer className="footer">
             <div class="wrapper">
@@ -64,7 +94,7 @@ class App extends Component {
               <p>© 2018 by selfHTML</p>
             </div>
           </footer>
-        </div>
+          </div>
       </Router>
     );
   }
