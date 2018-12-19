@@ -21,17 +21,6 @@ import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 import kalenderExtern from './pages/kalenderExtern';
 
-
-
-import Menu from "./components/Menu";
-import Startseite from "./pages/startseite";
-import AbtBadminton from "./pages/abtBadminton";
-import AbtBasketball from "./pages/abtBasketball";
-import AbtLeichtathletik from "./pages/abtLeichtathletik";
-import AbtSki from "./pages/abtSki";
-import AbtStockschützen from "./pages/abtStockschützen";
-import Login from "./containers/Login";
-import Vorstand from "./pages/ueberUns/vorstand";
 import Fotogalerie from "./pages/fotogalerie";
 
 class App extends Component {
