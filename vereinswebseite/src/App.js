@@ -19,19 +19,7 @@ import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
-import kalenderExtern from './pages/kalenderExtern';
-
-
-
-import Menu from "./components/Menu";
-import Startseite from "./pages/startseite";
-import AbtBadminton from "./pages/abtBadminton";
-import AbtBasketball from "./pages/abtBasketball";
-import AbtLeichtathletik from "./pages/abtLeichtathletik";
-import AbtSki from "./pages/abtSki";
-import AbtStockschützen from "./pages/abtStockschützen";
-import Login from "./containers/Login";
-import Vorstand from "./pages/ueberUns/vorstand";
+import Kursplan from './pages/kalenderExtern';
 import Fotogalerie from "./pages/fotogalerie";
 
 class App extends Component {
@@ -85,7 +73,7 @@ class App extends Component {
             <Route path="/datenschutz/" component={Datenschutz}/>
             <Route path="/satzung/" component={Satzung}/>
             <Route path="/ehrenordnung/" component={Ehrenordnung}/>
-            <Route path="/kalenderExtern/" component={kalenderExtern}/>
+            <Route path="/kalenderExtern/" component={Kursplan}/>
           </div>
           <footer className="footer">
             <div class="wrapper">

@@ -207,21 +207,30 @@ class TabsWrappedLabel extends React.Component {
                   }}>Stockschützen</MenuItem>
                 </Menu>
                 <NavButton
+                aria-owns={currentMenu === 'kalender-menu' ? 'kalender-menu' : undefined}
+                aria-haspopup="true"
+                onClick={this.handleClick('kalender-menu')}
                 className={classes.NavButton}
                 >
                   Kalender
                 </NavButton>
+                <Menu
+                  id="kalender-menu"
+                  anchorEl={anchorEl}
+                  open={currentMenu === 'kalender-menu'}
+                  onClose={this.handleClose}
+                >
+                <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/kalenderExtern")
+                  }}>Kursplan</MenuItem>
+                  </Menu>
                 <NavButton
                   aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
                   aria-haspopup="true"
                   onClick={this.handleClick('login-menu')}
                   className={classes.NavButton}
                 >
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/kalenderExtern")
-                  }}>Kursplan</MenuItem>
-
                   Login
                 </NavButton>
                 <Menu
