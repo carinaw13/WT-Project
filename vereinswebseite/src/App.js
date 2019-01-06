@@ -22,6 +22,12 @@ import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 import Kursplan from './pages/kalenderExtern';
 import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
+import Test from "./containers/Login"
+
+import AuthService from './containers/AuthService'
+import withAuth from './containers/withAuth'
+const Auth = new AuthService();
+
 
 class App extends Component {
   render() {
@@ -51,6 +57,10 @@ class App extends Component {
                 <h2 style={{ paddingLeft: "9.000em", fontSize: "2em" }}>
                   <i> Spass am Sport </i>
                 </h2>
+                <h3>Welcome {this.props.user.username}</h3>
+                <p className="App-intro">
+                <button type="button" className="form-submit" onClick={this.handleLogout.bind(this)}>Logout</button>
+                </p>
               </div>
             </header>
             <Menu />
@@ -74,6 +84,8 @@ class App extends Component {
             <Route path="/ehrenordnung/" component={Ehrenordnung}/>
             <Route path="/kalenderExtern/" component={Kursplan}/>
             <Route path="/kalenderIntern/" component={Kalender}/>
+            <Route path ="/test/" component={Test}/>
+
           </div>
           <footer className="footer">
             <div class="wrapper">
@@ -85,6 +97,11 @@ class App extends Component {
       </Router>
     );
   }
+  handleLogout(){
+    Auth.logout()
+    this.props.history.replace('/login');
+ }
+
 }
 
-export default App;
+export default withAuth(App);
