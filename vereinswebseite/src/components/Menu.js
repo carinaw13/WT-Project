@@ -38,8 +38,7 @@ const styles = theme => ({
     paddingLeft:"3.125em",
     paddingRight:"3.125em",
     fontSize:"0.938em",
-    backgroundColor:"#304FFE"
-  },
+  }, 
   search: {
     paddingLeft:'60px',
     paddingRight:'20px',
@@ -71,7 +70,8 @@ const styles = theme => ({
   },
   NavButton:{
     paddingLeft:'60px',
-    paddingRight:'60px'
+    paddingRight:'60px',
+    color:"white"
   },
   typography: {
     margin: theme.spacing.unit * 2,
@@ -108,10 +108,12 @@ class TabsWrappedLabel extends React.Component {
     const { classes } = this.props;
     //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
+    const open = Boolean(anchorEl);
+
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" style={{ flexDirection: 'row' }} >
+        <AppBar position="static" style={{ flexDirection: 'row', backgroundColor:"#08085e" }} >
                   <NavButton
                     onClick={() => { this.props.history.push("/") }}
                     className={classes.NavButton}
@@ -224,6 +226,10 @@ class TabsWrappedLabel extends React.Component {
                     this.handleClose()
                     this.props.history.push("/kalenderExtern")
                   }}>Kursplan</MenuItem>
+                  <MenuItem onClick={() => {
+                    this.handleClose()
+                    this.props.history.push("/kalenderIntern")
+                  }}>Kalender</MenuItem>
                   </Menu>
                 <NavButton
                   aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
@@ -233,17 +239,43 @@ class TabsWrappedLabel extends React.Component {
                 >
                   Login
                 </NavButton>
-                <Menu
-                  id="login-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'login-menu'}
-                  onClose={this.handleClose}
-                > 
-                <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/login")
-                  }}>Einloggen</MenuItem>
-                  </Menu>    
+                <Popover
+                    id="simple-popper"
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={this.handleClose}
+                    anchorOrigin={{
+                      vertical: 'bottom',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                    open={currentMenu === 'login-menu'}
+                  >
+                    <Typography className={classes.typography}>
+                    <TextField
+                      id="standard-name"
+                      label="Benutzername"
+                      value={this.state.name}
+                      onChange={this.handleChange('name')}
+                      margin="normal"
+                    />
+                    <br></br>
+                    <TextField
+                      id="standard-name"
+                      label="Passwort"
+                      value={this.state.name}
+                      onChange={this.handleChange('name')}
+                      margin="normal"
+                    />
+                    <br></br>
+                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }} >
+                      Einloggen
+                    </Button>
+                   </Typography>
+                  </Popover>
             <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
