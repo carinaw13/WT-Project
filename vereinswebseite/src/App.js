@@ -22,6 +22,7 @@ import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 import Kursplan from './pages/kalenderExtern';
 import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
+import DbTest from "./pages/dbTest";
 
 class App extends Component {
   render() {
@@ -74,6 +75,7 @@ class App extends Component {
             <Route path="/ehrenordnung/" component={Ehrenordnung}/>
             <Route path="/kalenderExtern/" component={Kursplan}/>
             <Route path="/kalenderIntern/" component={Kalender}/>
+            <Route path="/dbTest/" component={DbTest}/>
           </div>
           <footer className="footer">
             <div class="wrapper">
