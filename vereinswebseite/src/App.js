@@ -29,6 +29,7 @@ import withAuth from './containers/withAuth'
 const Auth = new AuthService();
 
 
+
 class App extends Component {
   render() {
     return (
@@ -60,7 +61,7 @@ class App extends Component {
                 <h3>Welcome {this.props.user.username}</h3>
                 <p className="App-intro">
                 <button type="button" className="form-submit" onClick={this.handleLogout.bind(this)}>Logout</button>
-                </p>
+            </p>
               </div>
             </header>
             <Menu />
@@ -86,6 +87,7 @@ class App extends Component {
             <Route path="/kalenderIntern/" component={Kalender}/>
             <Route path ="/test/" component={Test}/>
 
+
           </div>
           <footer className="footer">
             <div class="wrapper">
@@ -101,7 +103,6 @@ class App extends Component {
     Auth.logout()
     this.props.history.replace('/login');
  }
-
+ 
 }
-
 export default withAuth(App);
