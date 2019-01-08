@@ -7,7 +7,7 @@
 
 .App-logo {
   height: 20vmin;
-  margin-left: -200px; 
+  margin-left: -200px;
   margin-top: 5px;
   margin-bottom: 10px;
 }
@@ -29,11 +29,11 @@
   padding-left: 20px;
   margin-top: 40px;
   padding-top: 10px;
-  color: #08085e
+  color: #08085e;
 }
 
-.p{
-  color:#08085e
+.p {
+  color: #08085e;
 }
 
 .App-link {
@@ -68,6 +68,13 @@ li {
 #fullWidthSlider {
   width: 100%;
 }
+
+#galerie {
+  width: 60%;
+  margin: auto;
+  padding: 20px 0;
+}
+
 /*
 .page-header-home {
   background-color: black;
