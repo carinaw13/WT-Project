@@ -2,65 +2,37 @@ import ImageGallery from "react-image-gallery";
 import React from "react";
 import "../App.css";
 
-import ElmauerAlm1 from "../img/ElmauerAlm1.JPG";
-import ElmauerAlm2 from "../img/ElmauerAlm2.JPG";
-import BadmintonTurnier1 from "../img/BadmintonTurnier1.jpg";
-import BadmintonTurnier2 from "../img/BadmintonTurnier2.jpg";
-import BadmintonTurnier3 from "../img/BadmintonTurnier3.jpg";
-import BadmintonTurnier4 from "../img/BadmintonTurnier4.jpg";
-import Stockschützen1 from "../img/Stockschützen1.jpg";
+import BannerLaufbahn from "../img/Banner1.jpg";
+import BannerSki from "../img/Banner2.jpg";
+import BannerSonnenuntergang from "../img/Banner3.jpg";
+import BannerBerge from "../img/Banner4.jpg";
+
 
 class Startseite extends React.Component {
   render() {
     const images = [
       {
-        original: ElmauerAlm1,
-        thumbnail: ElmauerAlm1,
-        originalAlt: "Elmauer Alm",
-        thumbnailLabel: "Elmauer Alm"
+        original: BannerBerge,
+        originalAlt: "Banner Berge"
       },
       {
-        original: ElmauerAlm2,
-        thumbnail: ElmauerAlm2,
-        originalAlt: "Elmauer Alm",
-        thumbnailLabel: "Elmauer Alm"
+        original: BannerSonnenuntergang,
+        originalAlt: "Banner Sonnenuntergang"
       },
       {
-        original: BadmintonTurnier1,
-        thumbnail: BadmintonTurnier1,
-        originalAlt: "Badminton Turnier",
-        thumbnailLabel: "Badminton Turnier"
+        original: BannerLaufbahn,
+        originalAlt: "Banner Laufbahn"
       },
       {
-        original: BadmintonTurnier2,
-        thumbnail: BadmintonTurnier2,
-        originalAlt: "Badminton Turnier",
-        thumbnailLabel: "Badminton Turnier"
-      },
-      {
-        original: BadmintonTurnier3,
-        thumbnail: BadmintonTurnier3,
-        originalAlt: "Badminton Turnier",
-        thumbnailLabel: "Badminton Turnier"
-      },
-      {
-        original: BadmintonTurnier4,
-        thumbnail: BadmintonTurnier4,
-        originalAlt: "Badminton Turnier",
-        thumbnailLabel: "Badminton Turnier"
-      },
-      {
-        original: Stockschützen1,
-        thumbnail: Stockschützen1,
-        originalAlt: "Stockschützen",
-        thumbnailLabel: "Stockschützen"
+        original: BannerSki,
+        originalAlt: "Banner Ski"
       }
     ];
 
     return (
       <div class="mainbody-content">
         <div class="page-header-home">
-          <div id="galerie">
+          <div id="fullWidthSlider">
             <ImageGallery items={images} />
           </div>
         </div>

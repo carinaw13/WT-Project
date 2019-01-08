@@ -65,10 +65,8 @@ li {
   text-align: center;
 }
 
-#galerie {
-  width: 60%;
-  margin: auto;
-  padding: 20px 0;
+#fullWidthSlider {
+  width: 100%;
 }
 /*
 .page-header-home {
