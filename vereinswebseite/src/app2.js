@@ -1,17 +1,14 @@
 const express = require("express"); // load the node express module
 const bp = require("body-parser");
-const mysql = require("mysql2/promise");
 const app = express(); // create a new express app
 
-/*
-mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: 'Gabel35!',
-	database: 'vereinswebseite_db'
-})*/
+const port = 5000;
+
+const mysql = require("mysql2/promise");
 
 let db; // will be set below!
+let conn;
+
 mysql
   .createConnection({
     host: "localhost",
@@ -20,35 +17,32 @@ mysql
     database: "vereinswebseite_db"
   })
   .then(connection => {
+    conn = connection;
     db = connection; // remember the db-handle!
     return db.query("SELECT * FROM members");
-  })
-  .then(result => {
-    console.log(result);
-  })
-  .catch(err => console.log(err)); // log errors to console
-/*
-app.get("/members", function(req, res) {
-  connection.connect();
-  connection.query("SELECT * FROM members", function(error, results, fields) {
-    if (error) throw error;
-	res.send(results);
-	console.log(results);
   });
-  connection.end();
-});*/
 
-app.get("/", (req, res, next) => {
-  console.log(req.headers);
-  console.log(req.params);
-  console.log(req.body);
-  res.status(200).send("Hello");
+app.get("/", (req, res) => {
+  res.send("go to /members or /test");
 });
 
-app.get("/members", (req, res, next) => {
-  res.send("hello world");
+app.get("/members", (req, res) => {
+  conn.query("SELECT * FROM members").then(data => res.send(data));
+  return;
 });
 
+app.get("/test", (req, res, next) => {
+  res.send("Test: Hello world!");
+});
+
+app.get("/api/customers", (req, res) => {
+  const customers = [
+    { id: 1, firstName: "John", lastName: "Doe" },
+    { id: 2, firstName: "Steve", lastName: "Smith" },
+    { id: 3, firstName: "Mary", lastName: "Swanson" }
+  ];
+  res.json(customers);
+});
 
 // let's treat incoming request bodies as text/plain
 app.use(bp.text());
@@ -62,4 +56,4 @@ app.use((req, res) => {
 });
 
 // start the webserver, listen on port 3000
-app.listen(3000, () => console.log("Server ready on port 3000!"));
+app.listen(port, () => console.log("Example app.js listening on port " + port));

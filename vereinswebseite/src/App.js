@@ -19,8 +19,14 @@ import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
+<<<<<<< HEAD
 import kalenderExtern from './pages/kalenderExtern';
+=======
+import Kursplan from './pages/kalenderExtern';
+import Kalender from './pages/kalenderIntern';
+>>>>>>> fe11a961a71c8e598861bcb2c163114bde9bd0a9
 import Fotogalerie from "./pages/fotogalerie";
+import DbTest from "./pages/dbTest";
 
 class App extends Component {
   render() {
@@ -45,12 +51,10 @@ class App extends Component {
                     fontSize: "3em"
                   }}
                 >
-                  {" "}
-                  <i> SportClub Baierbrunn e.V.</i>{" "}
+                  <i> SportClub Baierbrunn e.V.</i>
                 </h1>
                 <h2 style={{ paddingLeft: "9.000em", fontSize: "2em" }}>
-                  {" "}
-                  <i> Spass am Sport </i>{" "}
+                  <i> Spass am Sport </i>
                 </h2>
               </div>
             </header>
@@ -73,13 +77,14 @@ class App extends Component {
             <Route path="/datenschutz/" component={Datenschutz}/>
             <Route path="/satzung/" component={Satzung}/>
             <Route path="/ehrenordnung/" component={Ehrenordnung}/>
-            <Route path="/kalenderExtern/" component={kalenderExtern}/>
+            <Route path="/kalenderExtern/" component={Kursplan}/>
+            <Route path="/kalenderIntern/" component={Kalender}/>
+            <Route path="/dbTest/" component={DbTest}/>
           </div>
           <footer className="footer">
             <div class="wrapper">
-              <a href="x.html">Home</a> | <a href="y.html">Kontakt</a>|{" "}
-              <a href="z.html">Impressum</a>
-              <p>© 2018 by selfHTML</p>
+              <a href="/">Home</a> | <a href="/kontakt/">Kontakt</a>| <a href="/impressum/">Impressum</a>
+              <p className="p"> © 2018 by selfHTML</p>
             </div>
           </footer>
           </div>
