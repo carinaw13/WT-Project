@@ -19,6 +19,7 @@ import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
+import kalenderExtern from './pages/kalenderExtern';
 import Kursplan from './pages/kalenderExtern';
 import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
@@ -29,6 +30,7 @@ import withAuth from './containers/withAuth'
 const Auth = new AuthService();
 
 
+//import DbTest from "./pages/dbTest";
 
 class App extends Component {
   render() {
@@ -86,8 +88,7 @@ class App extends Component {
             <Route path="/kalenderExtern/" component={Kursplan}/>
             <Route path="/kalenderIntern/" component={Kalender}/>
             <Route path ="/test/" component={Test}/>
-
-
+            {/* <Route path="/dbTest/" component={DbTest}/> */}
           </div>
           <footer className="footer">
             <div class="wrapper">

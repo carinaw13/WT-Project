@@ -1,7 +1,10 @@
 const express = require("express"); // load the node express module
 const bp = require("body-parser");
-const mysql = require("mysql2/promise");
 const app = express(); // create a new express app
+
+const port = 5000;
+
+const mysql = require("mysql2/promise");
 
 let db; // will be set below!
 let conn;
@@ -19,13 +22,28 @@ mysql
     return db.query("SELECT * FROM members");
   });
 
-app.get("/", (req, res, next) => {
-  conn.query("SELECT * FROM members").then(data => res.send(data));
+app.get("/", (req, res) => {
+  res.send("go to /members or /test");
+});
+
+app.get("/members", (req, res) => {
+  conn.query("SELECT * FROM members").then(data => {
+    res.send(data[0]);
+  });
   return;
 });
 
-app.get("/members", (req, res, next) => {
-  res.send("hello world");
+app.get("/test", (req, res, next) => {
+  res.send("Test: Hello world!");
+});
+
+app.get("/api/customers", (req, res) => {
+  const customers = [
+    { id: 1, firstName: "John", lastName: "Doe" },
+    { id: 2, firstName: "Steve", lastName: "Smith" },
+    { id: 3, firstName: "Mary", lastName: "Swanson" }
+  ];
+  res.json(customers);
 });
 
 // let's treat incoming request bodies as text/plain
@@ -40,4 +58,4 @@ app.use((req, res) => {
 });
 
 // start the webserver, listen on port 3000
-app.listen(3000, () => console.log("Server ready on port 3000!"));
+app.listen(port, () => console.log("Example app.js listening on port " + port));

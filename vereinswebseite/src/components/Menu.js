@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withRouter } from "react-router-dom"
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import Popover from '@material-ui/core/Popover'
-import TextField from '@material-ui/core/TextField';
+import React from "react";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import { withStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Typography from "@material-ui/core/Typography";
+import { fade } from "@material-ui/core/styles/colorManipulator";
+import SearchIcon from "@material-ui/icons/Search";
+import InputBase from "@material-ui/core/InputBase";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Popover from "@material-ui/core/Popover";
+import TextField from "@material-ui/core/TextField";
 
-import "../App.css"
+import "../App.css";
 
 function TabContainer(props) {
   return (
@@ -23,81 +23,76 @@ function TabContainer(props) {
   );
 }
 
-
 TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: 'white',
+    backgroundColor: "white"
   },
 
-  Tab:{
-    paddingLeft:"3.125em",
-    paddingRight:"3.125em",
-    fontSize:"0.938em",
-  }, 
+  Tab: {
+    paddingLeft: "3.125em",
+    paddingRight: "3.125em",
+    fontSize: "0.938em"
+  },
   search: {
-    paddingLeft:'60px',
-    paddingRight:'20px',
-    position: 'relative',
+    paddingLeft: "60px",
+    paddingRight: "20px",
+    position: "relative",
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
       marginLeft: "14.000em",
-      width: 'auto',
-      padding:"0.500em",
-      paddingRight:"4.125em",
-      fontSize:"0.938em",
-    },
+      width: "auto",
+      padding: "0.500em",
+      paddingRight: "4.125em",
+      fontSize: "0.938em"
+    }
   },
   searchIcon: {
     width: "40px",
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding:"0.238em",
-    paddingLeft:"12.000em"
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "0.238em",
+    paddingLeft: "12.000em"
   },
   inputRoot: {
-    color: 'inherit',
-    width: '100%',
+    color: "inherit",
+    width: "100%"
   },
-  NavButton:{
-    paddingLeft:'60px',
-    paddingRight:'60px',
-    color:"white"
+  NavButton: {
+    paddingLeft: "60px",
+    paddingRight: "60px",
+    color: "white"
   },
   typography: {
-    margin: theme.spacing.unit * 2,
-  },
+    margin: theme.spacing.unit * 2
+  }
 });
 
-const NavButton = withStyles({
-})(Button);
+const NavButton = withStyles({})(Button);
 
 class TabsWrappedLabel extends React.Component {
-
-
-  handleChange = name => (event, value, name ) => {
+  handleChange = name => (event, value, name) => {
     this.setState({ value, [name]: event.target.value });
   };
 
-
   state = {
     anchorEl: null,
-    currentMenu: null,
+    currentMenu: null
   };
 
   handleClick = menuName => {
-    return (event) => {
+    return event => {
       this.setState({ currentMenu: menuName, anchorEl: event.currentTarget });
-    }
+    };
   };
 
   handleClose = () => {
@@ -109,7 +104,6 @@ class TabsWrappedLabel extends React.Component {
     //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
     const open = Boolean(anchorEl);
-
 
     return (
       <div className={classes.root}>
@@ -304,18 +298,18 @@ class TabsWrappedLabel extends React.Component {
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
-                input: classes.inputInput,
+                input: classes.inputInput
               }}
             />
           </div>
         </AppBar>
-       </div> 
+      </div>
     );
   }
 }
 
 TabsWrappedLabel.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(withRouter(TabsWrappedLabel));
