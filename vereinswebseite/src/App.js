@@ -19,7 +19,6 @@ import unsereGeschichte from './pages/ueberUns/unsereGeschichte';
 import Datenschutz from './pages/ueberUns/datenschutz';
 import Satzung from './pages/ueberUns/satzung';
 import Ehrenordnung from './pages/ueberUns/ehrenordnung';
-import kalenderExtern from './pages/kalenderExtern';
 import Kursplan from './pages/kalenderExtern';
 import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
