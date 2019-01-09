@@ -22,16 +22,15 @@ import Ehrenordnung from './pages/ueberUns/ehrenordnung';
 import Kursplan from './pages/kalenderExtern';
 import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
-import Test from "./containers/Login"
 
 import AuthService from './containers/AuthService'
 import withAuth from './containers/withAuth'
 const Auth = new AuthService();
 
 
-//import DbTest from "./pages/dbTest";
-
 class App extends Component {
+
+  
   render() {
     return (
       <Router>
@@ -59,40 +58,36 @@ class App extends Component {
                 <h2 style={{ paddingLeft: "9.000em", fontSize: "2em" }}>
                   <i> Spass am Sport </i>
                 </h2>
-                <h3>Welcome {this.props.user.username}</h3>
+                <h3>Herzlich Willkommen {this.props.user.username} ! </h3>
                 <p className="App-intro">
                 <button type="button" className="form-submit" onClick={this.handleLogout.bind(this)}>Logout</button>
             </p>
               </div>
             </header>
-            <Menu />
+            <Menu/>
             <Route path="/" exact component={Startseite} />
-            <Route path="/badminton/" component={AbtBadminton} />
-            <Route path="/basketball/" component={AbtBasketball} />
+            <Route path="/badminton" component={AbtBadminton} />
+            <Route path="/basketball" component={AbtBasketball} />
             <Route path="/leichtathletik" component={AbtLeichtathletik} />
             <Route path="/ski" component={AbtSki} />
             <Route path="/stockschützen" component={AbtStockschützen} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/vorstand/" component={Vorstand} />
+            <Route path="/login" component={Login} />
+            <Route path="/vorstand" component={Vorstand} />
             <Route path="/fotogalerie" component={Fotogalerie} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/vorstand/" component={Vorstand}/>
-            <Route path="/gemeinde/" component={Gemeinde}/>
-            <Route path="/kontakt/" component={Kontakt}/>
-            <Route path="/impressum/" component={Impressum}/>
-            <Route path="/unsereGeschichte/" component={unsereGeschichte}/>
-            <Route path="/datenschutz/" component={Datenschutz}/>
-            <Route path="/satzung/" component={Satzung}/>
-            <Route path="/ehrenordnung/" component={Ehrenordnung}/>
-            <Route path="/kalenderExtern/" component={Kursplan}/>
-            <Route path="/kalenderIntern/" component={Kalender}/>
-            <Route path ="/test/" component={Test}/>
-            {/* <Route path="/dbTest/" component={DbTest}/> */}
+            <Route path="/gemeinde" component={Gemeinde}/>
+            <Route path="/kontakt" component={Kontakt}/>
+            <Route path="/impressum" component={Impressum}/>
+            <Route path="/unsereGeschichte" component={unsereGeschichte}/>
+            <Route path="/datenschutz" component={Datenschutz}/>
+            <Route path="/satzung" component={Satzung}/>
+            <Route path="/ehrenordnung" component={Ehrenordnung}/>
+            <Route path="/kalenderExtern" component={Kursplan}/>
+            <Route path="/kalenderIntern" component={Kalender}/>
           </div>
           <footer className="footer">
             <div class="wrapper">
-              <a href="/">Home</a> | <a href="/kontakt/">Kontakt</a>| <a href="/impressum/">Impressum</a>
-              <p className="p"> © 2018 by selfHTML</p>
+              <a href="/">Home</a> | <a href="/kontakt">Kontakt</a>| <a href="/impressum">Impressum</a>
+              <p className="p"> © 2019 by selfHTML</p>
             </div>
           </footer>
           </div>
