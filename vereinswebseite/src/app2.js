@@ -27,7 +27,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/members", (req, res) => {
-  conn.query("SELECT * FROM members").then(data => res.send(data));
+  conn.query("SELECT * FROM members").then(data => {
+    res.send(data[0]);
+  });
   return;
 });
 
