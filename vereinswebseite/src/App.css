@@ -75,7 +75,13 @@ li {
   padding: 20px 0;
 }
 
-/*
-.page-header-home {
-  background-color: black;
-}*/
+
+/*css für Mitgliedsantrag*/
+.form-div {
+  width: 80%;
+  margin: auto;
+}
+
+.left-p {
+  text-align: left;
+}
