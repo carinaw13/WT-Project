@@ -162,7 +162,7 @@ class TabsWrappedLabel extends React.Component {
             <MenuItem
               onClick={() => {
                 this.handleClose();
-                this.props.history.push("/basketball");
+                this.props.history.push("/mitgliedsantrag");
               }}
             >
               Mitglied werden

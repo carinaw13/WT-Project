@@ -23,6 +23,7 @@ import Kursplan from './pages/kalenderExtern';
 import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
 import DbTest from "./pages/dbTest";
+import Mitgliedsantrag from "./pages/ueberUns/mitgliedsantrag";
 
 class App extends Component {
   render() {
@@ -76,6 +77,7 @@ class App extends Component {
             <Route path="/kalenderExtern/" component={Kursplan}/>
             <Route path="/kalenderIntern/" component={Kalender}/>
             <Route path="/dbTest/" component={DbTest}/>
+            <Route path="/mitgliedsantrag" component={Mitgliedsantrag}/>
           </div>
           <footer className="footer">
             <div class="wrapper">
