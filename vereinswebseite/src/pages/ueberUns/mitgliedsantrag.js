@@ -14,16 +14,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 const styles = theme => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap"
-  },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit
-  },
-  dense: {
-    marginTop: 16
   },
   menu: {
     width: 200
@@ -49,13 +42,18 @@ class OutlinedTextFields extends React.Component {
     gender: ""
   };
 
+  componentDidMount() {
+    this.setState({
+      labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
+    });
+  }
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     const { classes } = this.props;
-
     return (
       <div className="form-div">
         <h1>SportClub Baierbrunn e.V.</h1>
@@ -67,14 +65,23 @@ class OutlinedTextFields extends React.Component {
           e.V.
         </p>
         <form className={classes.root} autoComplete="off">
-          <FormControl className={classes.formControl}>
-            <InputLabel>Geschlecht</InputLabel>
+          <FormControl variant="outlined" className={classes.formControl}>
+            <InputLabel
+              ref={ref => {
+                this.InputLabelRef = ref;
+              }}
+            >
+              Geschlecht
+            </InputLabel>
             <Select
               value={this.state.gender}
               onChange={this.handleChange}
-              inputProps={{
-                name: "gender"
-              }}
+              input={
+                <OutlinedInput
+                  labelWidth={this.state.labelWidth}
+                  name="gender"
+                />
+              }
             >
               <MenuItem value="">
                 <em>None</em>
@@ -84,14 +91,10 @@ class OutlinedTextFields extends React.Component {
               <MenuItem value={"divers"}>divers</MenuItem>
             </Select>
           </FormControl>
-        </form>
-
-        <form className={classes.container} noValidate autoComplete="off">
           <TextField
             id="outlined-required"
             label="Titel"
             className={classes.textField}
-            margin="normal"
             variant="outlined"
           />
           <TextField
@@ -99,7 +102,6 @@ class OutlinedTextFields extends React.Component {
             id="outlined-required"
             label="Vorname"
             className={classes.textField}
-            margin="normal"
             variant="outlined"
           />
           <TextField
@@ -107,17 +109,139 @@ class OutlinedTextFields extends React.Component {
             id="outlined-required"
             label="Name"
             className={classes.textField}
-            margin="normal"
+            variant="outlined"
+          />
+
+          <TextField
+            required
+            id="outlined-required"
+            label="Straße"
+            className={classes.textField}
             variant="outlined"
           />
           <TextField
+            required
+            id="outlined-required"
+            label="Hausnummer"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Postleitzahl"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Ort"
+            className={classes.textField}
+            variant="outlined"
+          />
+
+          <TextField
+            required
+            id="outlined-required"
+            label="Geburtsdatum"
+            placeholder="TT.MM.JJJJ"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Telefon/Mobil"
+            className={classes.textField}
+            variant="outlined"
+          />
+        </form>
+
+        <p className="left-p">2. Anmeldedaten für den Online-Zugang</p>
+        <form className={classes.root} autoComplete="off">
+          <TextField
+            required
             id="outlined-email-input"
             label="Email"
             className={classes.textField}
             type="email"
             name="email"
             autoComplete="email"
-            margin="normal"
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="standard-password-input"
+            label="Password"
+            className={classes.textField}
+            type="password"
+            autoComplete="current-password"
+            variant="outlined"
+          />
+        </form>
+
+        <p className="left-p">
+          3. Hiermit ermächtige ich den SC Baierbrunn e.V. bis auf Widerruf die
+          fälligen Beiträge (Jahresbeiträge, Kursbeiträge oder Umlagen)
+          ganzjährig von meinem folgenden Konto abzubuchen
+        </p>
+        <form className={classes.root} autoComplete="off">
+          <TextField
+            required
+            id="outlined-required"
+            label="Kontoinhaber"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Bank"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="IBAN"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="BIC"
+            className={classes.textField}
+            variant="outlined"
+          />
+        </form>
+
+        <p className="left-p">
+          Eine Änderung der oben aufgeführten Daten werde ich dem Verein
+          unverzüglich mitteilen. Eventuelle Kosten für Beitrags-Rückbuchungen
+          gehen zu Lasten des Mitgliedes. Gezahlte Beiträge werden nicht
+          zurückerstattet. Die Datenschutzerklärung habe ich gelesen und bin
+          damit einverstanden.
+        </p>
+        <p className="left-p">
+          Die Kündigung ist gemäß Satzung nur zum Jahresende möglich und muß
+          beim Vorstand bis zum 31.12. des Jahres in schriftlicher Form
+          eingegangen sein.
+        </p>
+        <form className={classes.root} autoComplete="off">
+          <TextField
+            required
+            id="outlined-required"
+            label="Ort"
+            className={classes.textField}
+            variant="outlined"
+          />
+          <TextField
+            required
+            id="outlined-required"
+            label="Datum"
+            className={classes.textField}
             variant="outlined"
           />
         </form>
