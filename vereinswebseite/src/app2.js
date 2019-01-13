@@ -4,47 +4,99 @@ const app = express(); // create a new express app
 
 const port = 5000;
 
-const mysql = require("mysql2/promise");
+//const mysql = require("mysql2/promise");
+const mysql = require("mysql");
 
 let db; // will be set below!
-let conn;
+//let conn;
 
-mysql
-  .createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Gabel35!",
-    database: "vereinswebseite_db"
-  })
+let conn = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "Gabel35!",
+  database: "vereinswebseite_db",
+  multipleStatements: true
+});
+/*
   .then(connection => {
     conn = connection;
     db = connection; // remember the db-handle!
     return db.query("SELECT * FROM members");
-  });
+  });*/
+
+conn.connect();
 
 app.get("/", (req, res) => {
   res.send("go to /members or /test");
 });
-
-app.get("/members", (req, res) => {
+/*
+app.get("/members2", (req, res) => {
   conn.query("SELECT * FROM members").then(data => {
     res.send(data[0]);
   });
   return;
+});
+*/
+app.get("/members", (req, res) => {
+  conn.query("SELECT * FROM members", (err, rows, fields) => {
+    if (!err) res.send(rows);
+    else console.log(err);
+  });
 });
 
 app.get("/test", (req, res, next) => {
   res.send("Test: Hello world!");
 });
 
-app.get("/api/customers", (req, res) => {
-  const customers = [
-    { id: 1, firstName: "John", lastName: "Doe" },
-    { id: 2, firstName: "Steve", lastName: "Smith" },
-    { id: 3, firstName: "Mary", lastName: "Swanson" }
-  ];
-  res.json(customers);
+// Tutorial https://www.youtube.com/watch?v=4fWWn2Pe2Mk -----------------------------------------------
+//Get all employees
+app.get("/employees", (req, res) => {
+  conn.query("SELECT * FROM employee", (err, rows, fields) => {
+    if (!err) res.send(rows);
+    else console.log(err);
+  });
 });
+
+//Get one specific employee
+app.get("/employees/:id", (req, res) => {
+  conn.query(
+    "SELECT * FROM employee WHERE EmpID = ?",
+    [req.params.id],
+    function(error, results, fields) {
+      if (!error) res.send(results);
+      else console.log(err);
+    }
+  );
+});
+
+//Delete one specific employee
+app.delete("/employees/:id", (req, res) => {
+  conn.query(
+    "DELETE FROM employee WHERE EmpID = ?",
+    [req.params.id],
+    (err, rows, fields) => {
+      if (!err) res.send();
+      else console.log(err);
+    }
+  );
+});
+
+//Insert one specific employee
+app.post("/employees", (req, res) => {
+  let emp = req.body;
+  var sql =
+    "SET @EmpID = ?;SET @Name = ?;SET @EmpCode = ?;SET @Salary = ?; \
+  CALL EmployeeAddOrEdit(@EmpID,@Name,@EmpCode,@Salary);";
+  conn.query(
+    sql,
+    [emp.EmpID, emp.Name, emp.EmpCode, emp.Salary],
+    (err, rows, fields) => {
+      if (!err) res.send(rows);
+      else console.log(err);
+    }
+  );
+});
+//----------------------------------------------------------------------------------
 
 // let's treat incoming request bodies as text/plain
 app.use(bp.text());
