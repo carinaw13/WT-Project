@@ -30,10 +30,10 @@ import AuthService from './containers/AuthService'
 const Auth = new AuthService('http://localhost:8080')
 
 class App extends Component {
-  state =  {
+  state = {
     user: null
   }
-  
+
   componentWillMount() {
     this._updateUser()
   }
@@ -66,22 +66,22 @@ class App extends Component {
               <h2 style={{ paddingLeft: "9.000em", fontSize: "2em" }}>
                 <i> Spass am Sport </i>
               </h2>
-              { user != null ?
+              {user != null ?
                 (<React.Fragment>
-                <h3>Herzlich Willkommen {user.username} ! </h3>
-                      <p className="App-intro">
-                      <Button 
-                        style={{backgroundColor: "yellow"}}
-                        onClick={this.handleLogout.bind(this)}
-                      >Logout</Button>
-                      </p>
+                  <h3>Herzlich Willkommen {user.username} ! </h3>
+                  <p className="App-intro">
+                    <Button
+                      style={{ backgroundColor: "yellow" }}
+                      onClick={this.handleLogout.bind(this)}
+                    >Logout</Button>
+                  </p>
 
                 </React.Fragment>)
                 :
                 null
               }
-              
-          
+
+
             </div>
           </header>
           <Menu user={user} authService={Auth} onAuth={this._updateUser.bind(this)} />
@@ -93,19 +93,18 @@ class App extends Component {
           <Route path="/stockschützen" component={AbtStockschützen} />
           <Route path="/vorstand" component={Vorstand} />
           <Route path="/fotogalerie" component={Fotogalerie} />
-
-          <Route path="/vorstand" component={Vorstand}/>
-          <Route path="/gemeinde" component={Gemeinde}/>
-          <Route path="/kontakt" component={Kontakt}/>
-          <Route path="/impressum" component={Impressum}/>
-          <Route path="/unsereGeschichte" component={unsereGeschichte}/>
-          <Route path="/datenschutz" component={Datenschutz}/>
-          <Route path="/satzung" component={Satzung}/>
-          <Route path="/ehrenordnung" component={Ehrenordnung}/>
-          <Route path="/kalenderExtern" component={Kursplan}/>
-          <Route path="/kalenderIntern" component={Kalender}/>
-          <Route path="/dbTest" component={DbTest}/>
-          <Route path="/mitgliedsantrag" component={Mitgliedsantrag}/>
+          <Route path="/vorstand" component={Vorstand} />
+          <Route path="/gemeinde" component={Gemeinde} />
+          <Route path="/kontakt" component={Kontakt} />
+          <Route path="/impressum" component={Impressum} />
+          <Route path="/unsereGeschichte" component={unsereGeschichte} />
+          <Route path="/datenschutz" component={Datenschutz} />
+          <Route path="/satzung" component={Satzung} />
+          <Route path="/ehrenordnung" component={Ehrenordnung} />
+          <Route path="/kalenderExtern" component={Kursplan} />
+          <Route path="/kalenderIntern" component={Kalender} />
+          <Route path="/dbTest" component={DbTest} />
+          <Route path="/mitgliedsantrag" component={Mitgliedsantrag} />
         </div>
         <footer className="footer">
           <div class="wrapper">
@@ -117,7 +116,7 @@ class App extends Component {
     );
   }
 
-  handleLogout(){
+  handleLogout() {
     Auth.logout()
 
     this.setState({
@@ -125,23 +124,28 @@ class App extends Component {
     })
 
     this.props.history.replace('/');
- }
+  }
 
- 
- _updateUser() {
-  if (Auth.loggedIn()) {
-    try {
+
+  _updateUser() {
+    if (Auth.loggedIn()) {
+      try {
         const profile = Auth.getProfile()
         this.setState({
-            user: profile
+          user: profile
         })
-    }
-    catch(err){
+      }
+      catch (err) {
         Auth.logout()
         this.props.history.replace('/')
+      }
     }
   }
 }
-}
 
 export default App
+
+
+
+
+

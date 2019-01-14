@@ -106,208 +106,208 @@ class TabsWrappedLabel extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static" style={{ flexDirection: 'row', backgroundColor:"#08085e" }} >
-                  <NavButton
-                    onClick={() => { this.props.history.push("/") }}
-                    className={classes.NavButton}
-                  >
-                  Startseite
+        <AppBar position="static" style={{ flexDirection: 'row', backgroundColor: "#08085e" }} >
+          <NavButton
+            onClick={() => { this.props.history.push("/") }}
+            className={classes.NavButton}
+          >
+            Startseite
                   </NavButton>
-                <NavButton
-                  aria-owns={currentMenu === 'about-us-menu' ? 'about-us-menu' : undefined}
-                  aria-haspopup="true"
-                  onClick={this.handleClick('about-us-menu')}
-                  className={classes.NavButton}
-                >
-                  Über uns
+          <NavButton
+            aria-owns={currentMenu === 'about-us-menu' ? 'about-us-menu' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleClick('about-us-menu')}
+            className={classes.NavButton}
+          >
+            Über uns
                 </NavButton>
-                <Menu
-                  id="about-us-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'about-us-menu'}
-                  onClose={this.handleClose}
-                >
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/unsereGeschichte")
-                  }}>Unsere Geschichte</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/gemeinde")
-                  }}>Gemeinde Baierbrunn</MenuItem>
-                    <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/vorstand")
-                  }}>Vorstand</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/basketball")
-                  }}>Mitglied werden</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/kontakt")
-                  }}>Kontakt</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/impressum")
-                  }}>Impressum</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/datenschutz")
-                  }}>Datenschutz</MenuItem>                  
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/satzung")
-                  }}>Satzung</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/ehrenordnung")
-                  }}>Ehrenordnung</MenuItem>                  
-                  
+          <Menu
+            id="about-us-menu"
+            anchorEl={anchorEl}
+            open={currentMenu === 'about-us-menu'}
+            onClose={this.handleClose}
+          >
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/unsereGeschichte")
+            }}>Unsere Geschichte</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/gemeinde")
+            }}>Gemeinde Baierbrunn</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/vorstand")
+            }}>Vorstand</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/basketball")
+            }}>Mitglied werden</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/kontakt")
+            }}>Kontakt</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/impressum")
+            }}>Impressum</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/datenschutz")
+            }}>Datenschutz</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/satzung")
+            }}>Satzung</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/ehrenordnung")
+            }}>Ehrenordnung</MenuItem>
 
-                </Menu>
-                <NavButton
-                  aria-owns={currentMenu === 'abt-menu' ? 'abt-menu' : undefined}
-                  aria-haspopup="true"
-                  onClick={this.handleClick('abt-menu')}
-                  className={classes.NavButton}
-                >
-                  Abteilung
-                </NavButton>
-                <Menu
-                  id="abt-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'abt-menu'}
-                  onClose={this.handleClose}
-                >
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/badminton")
-                  }}>Badminton</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/basketball")
-                  }}>Basketball</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/leichtathletik")
-                  }}>Leichtathletik</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/ski")
-                  }}>Ski</MenuItem>
-                  <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/stockschützen")
-                  }}>Stockschützen</MenuItem>
-                </Menu>
-                <NavButton
-                aria-owns={currentMenu === 'kalender-menu' ? 'kalender-menu' : undefined}
-                aria-haspopup="true"
-                onClick={this.handleClick('kalender-menu')}
-                className={classes.NavButton}
-                >
-                  Kalender
-                </NavButton>
-                <Menu
-                  id="kalender-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'kalender-menu'}
-                  onClose={this.handleClose}
-                >
-                { user === null ?
-                  (<MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/kalenderExtern")
-                  }}>Kursplan</MenuItem>)
-                :
-                  (<MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/kalenderIntern")
-                  }}>Kalender</MenuItem>)
-                }
-                
-                  
-                  </Menu>
-                  <NavButton
-                aria-owns={currentMenu === 'test-menu' ? 'test-menu' : undefined}
-                aria-haspopup="true"
-                onClick={this.handleClick('test-menu')}
-                className={classes.NavButton}
-                >
-                 Test
-                </NavButton>
-                  <Menu
-                  id="test-menu"
-                  anchorEl={anchorEl}
-                  open={currentMenu === 'test-menu'}
-                  onClose={this.handleClose}
-                >
-                <MenuItem onClick={() => {
-                    this.handleClose()
-                    this.props.history.push("/test")
-                  }}>Test</MenuItem>
-                  </Menu>
 
-                <NavButton
-                  aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
-                  aria-haspopup="true"
-                  onClick={this.handleClick('login-menu')}
-                  className={classes.NavButton}
-                >
-                  Login
+          </Menu>
+          <NavButton
+            aria-owns={currentMenu === 'abt-menu' ? 'abt-menu' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleClick('abt-menu')}
+            className={classes.NavButton}
+          >
+            Abteilung
                 </NavButton>
-                <Popover
-                    id="simple-popper"
-                    anchorEl={anchorEl}
-                    onClose={this.handleClose}
-                    anchorOrigin={{
-                      vertical: 'bottom',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'center',
-                    }}
-                    open={currentMenu === 'login-menu'}
-                  >
-                    <Typography className={classes.typography}>
-                    <TextField
-                      id="standard-name"
-                      label="Benutzername"
-                      value={this.state.name}
-                      onChange={this.handleChange('username')}
-                      margin="normal"
-                    />
-                    <br></br>
-                    <TextField
-                      id="standard-name"
-                      label="Passwort"
-                      value={this.state.name}
-                      onChange={this.handleChange('password')}
-                      type="password"
-                      margin="normal"
-                    />
-                    <br></br>
-                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }}
-                      onClick={(e) => {
-                        e.preventDefault();
-      
-                        authService.login(this.state.username, this.state.password)
-                            .then(res =>{
-                              this.setState({currentMenu: null})
-                              onAuth && onAuth()
-                            })
-                            .catch(err =>{
-                                alert(err);
-                            })
-                      }}
-                    >
-                      Einloggen
+          <Menu
+            id="abt-menu"
+            anchorEl={anchorEl}
+            open={currentMenu === 'abt-menu'}
+            onClose={this.handleClose}
+          >
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/badminton")
+            }}>Badminton</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/basketball")
+            }}>Basketball</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/leichtathletik")
+            }}>Leichtathletik</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/ski")
+            }}>Ski</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/stockschützen")
+            }}>Stockschützen</MenuItem>
+          </Menu>
+          <NavButton
+            aria-owns={currentMenu === 'kalender-menu' ? 'kalender-menu' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleClick('kalender-menu')}
+            className={classes.NavButton}
+          >
+            Kalender
+                </NavButton>
+          <Menu
+            id="kalender-menu"
+            anchorEl={anchorEl}
+            open={currentMenu === 'kalender-menu'}
+            onClose={this.handleClose}
+          >
+            {user === null ?
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/kalenderExtern")
+              }}>Kursplan</MenuItem>)
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/kalenderIntern")
+              }}>Kalender</MenuItem>)
+            }
+
+
+          </Menu>
+          <NavButton
+            aria-owns={currentMenu === 'test-menu' ? 'test-menu' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleClick('test-menu')}
+            className={classes.NavButton}
+          >
+            Test
+                </NavButton>
+          <Menu
+            id="test-menu"
+            anchorEl={anchorEl}
+            open={currentMenu === 'test-menu'}
+            onClose={this.handleClose}
+          >
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/test")
+            }}>Test</MenuItem>
+          </Menu>
+
+          <NavButton
+            aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
+            aria-haspopup="true"
+            onClick={this.handleClick('login-menu')}
+            className={classes.NavButton}
+          >
+            Login
+                </NavButton>
+          <Popover
+            id="simple-popper"
+            anchorEl={anchorEl}
+            onClose={this.handleClose}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            open={currentMenu === 'login-menu'}
+          >
+            <Typography className={classes.typography}>
+              <TextField
+                id="standard-name"
+                label="Benutzername"
+                value={this.state.name}
+                onChange={this.handleChange('username')}
+                margin="normal"
+              />
+              <br></br>
+              <TextField
+                id="standard-name"
+                label="Passwort"
+                value={this.state.name}
+                onChange={this.handleChange('password')}
+                type="password"
+                margin="normal"
+              />
+              <br></br>
+              <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft: "40px", paddingBottom: "10px" }}
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  authService.login(this.state.username, this.state.password)
+                    .then(res => {
+                      this.setState({ currentMenu: null })
+                      onAuth && onAuth()
+                    })
+                    .catch(err => {
+                      alert(err);
+                    })
+                }}
+              >
+                Einloggen
                     </Button>
-                   </Typography>
-                  </Popover>
-            <div className={classes.search}>
+            </Typography>
+          </Popover>
+          <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>

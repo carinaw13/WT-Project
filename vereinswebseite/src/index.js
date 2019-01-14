@@ -6,10 +6,10 @@ import './index.css'
 
 import App from './App'
 
-const YoloApp = withRouter(App)
+const UserApp = withRouter(App)
 
 ReactDOM.render(
     <Router>
-        <YoloApp />
+        <UserApp />
     </Router>,
     document.getElementById('root'))
