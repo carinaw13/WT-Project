@@ -71,7 +71,7 @@ class App extends Component {
                   <h3>Herzlich Willkommen {user.username} ! </h3>
                   <p className="App-intro">
                     <Button
-                      style={{ backgroundColor: "yellow" }}
+                      style={{ backgroundColor: "rgb(8, 8, 94)", color:"white"}}
                       onClick={this.handleLogout.bind(this)}
                     >Logout</Button>
                   </p>
