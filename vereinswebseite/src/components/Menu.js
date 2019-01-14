@@ -141,7 +141,7 @@ class TabsWrappedLabel extends React.Component {
             }}>Vorstand</MenuItem>
             <MenuItem onClick={() => {
               this.handleClose()
-              this.props.history.push("/basketball")
+              this.props.history.push("/mitgliedsantrag")
             }}>Mitglied werden</MenuItem>
             <MenuItem onClick={() => {
               this.handleClose()
