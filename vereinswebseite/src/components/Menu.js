@@ -226,29 +226,7 @@ class TabsWrappedLabel extends React.Component {
                 this.props.history.push("/kalenderIntern")
               }}>Kalender</MenuItem>)
             }
-
-
           </Menu>
-          <NavButton
-            aria-owns={currentMenu === 'test-menu' ? 'test-menu' : undefined}
-            aria-haspopup="true"
-            onClick={this.handleClick('test-menu')}
-            className={classes.NavButton}
-          >
-            Test
-                </NavButton>
-          <Menu
-            id="test-menu"
-            anchorEl={anchorEl}
-            open={currentMenu === 'test-menu'}
-            onClose={this.handleClose}
-          >
-            <MenuItem onClick={() => {
-              this.handleClose()
-              this.props.history.push("/test")
-            }}>Test</MenuItem>
-          </Menu>
-
           <NavButton
             aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
             aria-haspopup="true"
