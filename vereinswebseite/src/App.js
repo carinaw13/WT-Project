@@ -109,7 +109,7 @@ class App extends Component {
         <footer className="footer">
           <div class="wrapper">
             <a href="/">Home</a> | <a href="/kontakt">Kontakt</a>| <a href="/impressum">Impressum</a>
-            <p className="p"> © 2019 by YOLO</p>
+            <p className="p"> © 2019 </p>
           </div>
         </footer>
       </div>
