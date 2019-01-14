@@ -151,20 +151,30 @@ class TabsWrappedLabel extends React.Component {
               this.handleClose()
               this.props.history.push("/impressum")
             }}>Impressum</MenuItem>
-            <MenuItem onClick={() => {
-              this.handleClose()
-              this.props.history.push("/datenschutz")
-            }}>Datenschutz</MenuItem>
-            <MenuItem onClick={() => {
-              this.handleClose()
-              this.props.history.push("/satzung")
-            }}>Satzung</MenuItem>
-            <MenuItem onClick={() => {
-              this.handleClose()
-              this.props.history.push("/ehrenordnung")
-            }}>Ehrenordnung</MenuItem>
+            {user === null ?
+              null
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/datenschutz")
+              }}>Datenschutz</MenuItem>)
+            }
+            {user === null ?
+              null
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/satzung")
+              }}>Satzung</MenuItem>)
+            }
 
-
+            {user === null ?
+              null
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/ehrenordnung")
+              }}>Ehrenordnung</MenuItem>)}
           </Menu>
           <NavButton
             aria-owns={currentMenu === 'abt-menu' ? 'abt-menu' : undefined}
@@ -233,7 +243,7 @@ class TabsWrappedLabel extends React.Component {
             onClick={this.handleClick('login-menu')}
             className={classes.NavButton}
           >
-            Login
+            Intern
                 </NavButton>
           <Popover
             id="simple-popper"
@@ -256,6 +266,7 @@ class TabsWrappedLabel extends React.Component {
                 value={this.state.name}
                 onChange={this.handleChange('username')}
                 margin="normal"
+                required="true"
               />
               <br></br>
               <TextField
@@ -265,6 +276,7 @@ class TabsWrappedLabel extends React.Component {
                 onChange={this.handleChange('password')}
                 type="password"
                 margin="normal"
+                required="true"
               />
               <br></br>
               <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft: "40px", paddingBottom: "10px" }}
