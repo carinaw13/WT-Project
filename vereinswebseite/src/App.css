@@ -75,7 +75,21 @@ li {
   padding: 20px 0;
 }
 
-/*
-.page-header-home {
-  background-color: black;
-}*/
+/*css für Mitgliedsantrag*/
+.form-div {
+  width: 70%;
+  margin: auto;
+}
+
+.left-p {
+  text-align: left;
+}
+
+.OutlinedTextFields-formControl-106 {
+  margin: 0em 1em 1em 0em !important;
+  min-width: 197px !important;
+}
+
+.OutlinedTextFields-textField-103 {
+  margin: 0em 1em 1em 0em !important;
+}
