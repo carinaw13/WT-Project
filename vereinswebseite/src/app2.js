@@ -13,7 +13,7 @@ let db; // will be set below!
 let conn = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Gabel35!",
+  password: "root",
   database: "vereinswebseite_db",
   multipleStatements: true
 });
@@ -43,6 +43,21 @@ app.get("/members", (req, res) => {
     else console.log(err);
   });
 });
+
+app.post("/members", (req, res) => {
+  let member = req.body;
+
+  var sql =
+    "INSERT INTO members (email, firstname, lastname) VALUES (?,?,?)";
+  conn.query(
+    sql,
+    [member.email, member.firstname, member.lastname],
+    (err, rows, fields) => {
+      if (!err) res.send(rows);
+      else console.log(err);
+    }
+  );
+})
 
 app.get("/test", (req, res, next) => {
   res.send("Test: Hello world!");
