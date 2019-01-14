@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { Route } from "react-router-dom"
+import Button from "@material-ui/core/Button";
+
 import './App.css'
 import logo from './img/RZ_Logo_Baierbrunn.png'
 
@@ -10,7 +12,6 @@ import AbtBasketball from './pages/abtBasketball'
 import AbtLeichtathletik from './pages/abtLeichtathletik'
 import AbtSki from './pages/abtSki'
 import AbtStockschützen from './pages/abtStockschützen'
-import Login from './containers/Login'
 import Vorstand from './pages/ueberUns/vorstand'
 import Gemeinde from './pages/ueberUns/gemeinde'
 import Kontakt from './pages/ueberUns/kontakt'
@@ -24,16 +25,21 @@ import Kalender from './pages/kalenderIntern';
 import Fotogalerie from "./pages/fotogalerie";
 
 import AuthService from './containers/AuthService'
-import withAuth from './containers/withAuth'
-const Auth = new AuthService();
-
+const Auth = new AuthService('http://localhost:8080')
 
 class App extends Component {
-
+  state =  {
+    user: null
+  }
   
+  componentWillMount() {
+    this._updateUser()
+  }
+
   render() {
+    const { user } = this.state
+
     return (
-      <Router>
         <div>
           <div className="App">
             <header className="App-header">
@@ -58,20 +64,31 @@ class App extends Component {
                 <h2 style={{ paddingLeft: "9.000em", fontSize: "2em" }}>
                   <i> Spass am Sport </i>
                 </h2>
-                <h3>Herzlich Willkommen {this.props.user.username} ! </h3>
-                <p className="App-intro">
-                <button type="button" className="form-submit" onClick={this.handleLogout.bind(this)}>Logout</button>
-            </p>
+                { user != null ?
+                  (<React.Fragment>
+                  <h3>Herzlich Willkommen {user.username} ! </h3>
+                        <p className="App-intro">
+                        <Button 
+                          style={{backgroundColor: "yellow"}}
+                          onClick={this.handleLogout.bind(this)}
+                        >Logout</Button>
+                        </p>
+
+                  </React.Fragment>)
+                  :
+                  null
+                }
+                
+            
               </div>
             </header>
-            <Menu/>
+            <Menu user={user} authService={Auth} onAuth={this._updateUser.bind(this)} />
             <Route path="/" exact component={Startseite} />
             <Route path="/badminton" component={AbtBadminton} />
             <Route path="/basketball" component={AbtBasketball} />
             <Route path="/leichtathletik" component={AbtLeichtathletik} />
             <Route path="/ski" component={AbtSki} />
             <Route path="/stockschützen" component={AbtStockschützen} />
-            <Route path="/login" component={Login} />
             <Route path="/vorstand" component={Vorstand} />
             <Route path="/fotogalerie" component={Fotogalerie} />
             <Route path="/gemeinde" component={Gemeinde}/>
@@ -87,17 +104,39 @@ class App extends Component {
           <footer className="footer">
             <div class="wrapper">
               <a href="/">Home</a> | <a href="/kontakt">Kontakt</a>| <a href="/impressum">Impressum</a>
-              <p className="p"> © 2019 by selfHTML</p>
+              <p className="p"> © 2019 by YOLO</p>
             </div>
           </footer>
           </div>
-      </Router>
+
     );
   }
+
   handleLogout(){
     Auth.logout()
-    this.props.history.replace('/login');
+
+    this.setState({
+      user: null
+    })
+
+    this.props.history.replace('/');
  }
+
  
+ _updateUser() {
+  if (Auth.loggedIn()) {
+    try {
+        const profile = Auth.getProfile()
+        this.setState({
+            user: profile
+        })
+    }
+    catch(err){
+        Auth.logout()
+        this.props.history.replace('/')
+    }
+  }
 }
-export default withAuth(App);
+}
+
+export default App

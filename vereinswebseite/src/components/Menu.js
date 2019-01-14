@@ -80,8 +80,8 @@ const styles = theme => ({
 const NavButton = withStyles({})(Button);
 
 class TabsWrappedLabel extends React.Component {
-  handleChange = name => (event, value, name) => {
-    this.setState({ value, [name]: event.target.value });
+  handleChange = name => (event) => {
+    this.setState({ [name]: event.target.value });
   };
 
   state = {
@@ -100,10 +100,9 @@ class TabsWrappedLabel extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, user, authService, onAuth } = this.props;
     //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
-    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
@@ -216,14 +215,19 @@ class TabsWrappedLabel extends React.Component {
                   open={currentMenu === 'kalender-menu'}
                   onClose={this.handleClose}
                 >
-                <MenuItem onClick={() => {
+                { user === null ?
+                  (<MenuItem onClick={() => {
                     this.handleClose()
                     this.props.history.push("/kalenderExtern")
-                  }}>Kursplan</MenuItem>
-                  <MenuItem onClick={() => {
+                  }}>Kursplan</MenuItem>)
+                :
+                  (<MenuItem onClick={() => {
                     this.handleClose()
                     this.props.history.push("/kalenderIntern")
-                  }}>Kalender</MenuItem>
+                  }}>Kalender</MenuItem>)
+                }
+                
+                  
                   </Menu>
                   <NavButton
                 aria-owns={currentMenu === 'test-menu' ? 'test-menu' : undefined}
@@ -255,7 +259,6 @@ class TabsWrappedLabel extends React.Component {
                 </NavButton>
                 <Popover
                     id="simple-popper"
-                    open={open}
                     anchorEl={anchorEl}
                     onClose={this.handleClose}
                     anchorOrigin={{
@@ -273,7 +276,7 @@ class TabsWrappedLabel extends React.Component {
                       id="standard-name"
                       label="Benutzername"
                       value={this.state.name}
-                      onChange={this.handleChange('name')}
+                      onChange={this.handleChange('username')}
                       margin="normal"
                     />
                     <br></br>
@@ -281,11 +284,25 @@ class TabsWrappedLabel extends React.Component {
                       id="standard-name"
                       label="Passwort"
                       value={this.state.name}
-                      onChange={this.handleChange('name')}
+                      onChange={this.handleChange('password')}
+                      type="password"
                       margin="normal"
                     />
                     <br></br>
-                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }} >
+                    <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft:"40px", paddingBottom:"10px" }}
+                      onClick={(e) => {
+                        e.preventDefault();
+      
+                        authService.login(this.state.username, this.state.password)
+                            .then(res =>{
+                              this.setState({currentMenu: null})
+                              onAuth && onAuth()
+                            })
+                            .catch(err =>{
+                                alert(err);
+                            })
+                      }}
+                    >
                       Einloggen
                     </Button>
                    </Typography>

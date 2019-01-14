@@ -1,15 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Login from './containers/Login'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, withRouter } from "react-router-dom"
+
+import './index.css'
+
+import App from './App'
+
+const YoloApp = withRouter(App)
 
 ReactDOM.render(
     <Router>
-        <div>
-        <Route path="/" exact component={App} />
-        <Route path="/login" component={Login} />
-        </div>
+        <YoloApp />
     </Router>,
-    document.getElementById('root'));
+    document.getElementById('root'))
