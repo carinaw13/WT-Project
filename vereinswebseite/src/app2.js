@@ -4,25 +4,17 @@ const app = express(); // create a new express app
 
 const port = 5000;
 
-//const mysql = require("mysql2/promise");
 const mysql = require("mysql");
 
-let db; // will be set below!
-//let conn;
+let db;
 
 let conn = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "root",
+  password: "Gabel35!",
   database: "vereinswebseite_db",
   multipleStatements: true
 });
-/*
-  .then(connection => {
-    conn = connection;
-    db = connection; // remember the db-handle!
-    return db.query("SELECT * FROM members");
-  });*/
 
 conn.connect();
 
@@ -46,9 +38,7 @@ app.get("/members", (req, res) => {
 
 app.post("/members", (req, res) => {
   let member = req.body;
-
-  var sql =
-    "INSERT INTO members (email, firstname, lastname) VALUES (?,?,?)";
+  var sql = "INSERT INTO members2 (email, firstname, lastname) VALUES (?,?,?)";
   conn.query(
     sql,
     [member.email, member.firstname, member.lastname],
@@ -57,7 +47,7 @@ app.post("/members", (req, res) => {
       else console.log(err);
     }
   );
-})
+});
 
 app.get("/test", (req, res, next) => {
   res.send("Test: Hello world!");
