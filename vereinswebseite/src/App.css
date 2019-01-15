@@ -83,6 +83,7 @@ li {
 
 .left-p {
   text-align: left;
+  width: 100%;
 }
 
 .OutlinedTextFields-formControl-106 {
@@ -92,4 +93,9 @@ li {
 
 .OutlinedTextFields-textField-103 {
   margin: 0em 1em 1em 0em !important;
+}
+
+#submitButton {
+  height: 55px;
+  color: #08085e;
 }

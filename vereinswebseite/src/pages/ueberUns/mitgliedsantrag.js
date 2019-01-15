@@ -9,6 +9,9 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
+
+//import SignaturePad from "react-signature-pad-wrapper";
 
 const styles = theme => ({
   textField: {
@@ -51,6 +54,7 @@ class OutlinedTextFields extends React.Component {
 
   render() {
     const { classes } = this.props;
+
     return (
       <div className="form-div">
         <h1>SportClub Baierbrunn e.V.</h1>
@@ -153,10 +157,8 @@ class OutlinedTextFields extends React.Component {
             className={classes.textField}
             variant="outlined"
           />
-        </form>
 
-        <p className="left-p">2. Anmeldedaten für den Online-Zugang</p>
-        <form className={classes.root} autoComplete="off">
+          <p className="left-p">2. Anmeldedaten für den Online-Zugang</p>
           <TextField
             required
             id="outlined-email-input"
@@ -176,14 +178,12 @@ class OutlinedTextFields extends React.Component {
             autoComplete="current-password"
             variant="outlined"
           />
-        </form>
 
-        <p className="left-p">
-          3. Hiermit ermächtige ich den SC Baierbrunn e.V. bis auf Widerruf die
-          fälligen Beiträge (Jahresbeiträge, Kursbeiträge oder Umlagen)
-          ganzjährig von meinem folgenden Konto abzubuchen
-        </p>
-        <form className={classes.root} autoComplete="off">
+          <p className="left-p">
+            3. Hiermit ermächtige ich den SC Baierbrunn e.V. bis auf Widerruf
+            die fälligen Beiträge (Jahresbeiträge, Kursbeiträge oder Umlagen)
+            ganzjährig von meinem folgenden Konto abzubuchen
+          </p>
           <TextField
             required
             id="outlined-required"
@@ -212,21 +212,29 @@ class OutlinedTextFields extends React.Component {
             className={classes.textField}
             variant="outlined"
           />
-        </form>
 
-        <p className="left-p">
-          Eine Änderung der oben aufgeführten Daten werde ich dem Verein
-          unverzüglich mitteilen. Eventuelle Kosten für Beitrags-Rückbuchungen
-          gehen zu Lasten des Mitgliedes. Gezahlte Beiträge werden nicht
-          zurückerstattet. Die Datenschutzerklärung habe ich gelesen und bin
-          damit einverstanden.
-        </p>
-        <p className="left-p">
-          Die Kündigung ist gemäß Satzung nur zum Jahresende möglich und muß
-          beim Vorstand bis zum 31.12. des Jahres in schriftlicher Form
-          eingegangen sein.
-        </p>
-        <form className={classes.root} autoComplete="off">
+          <p className="left-p">
+            Eine Änderung der oben aufgeführten Daten werde ich dem Verein
+            unverzüglich mitteilen. Eventuelle Kosten für Beitrags-Rückbuchungen
+            gehen zu Lasten des Mitgliedes. Gezahlte Beiträge werden nicht
+            zurückerstattet.
+          </p>
+          <p className="left-p">
+            Die Kündigung ist gemäß Satzung nur zum Jahresende möglich und muß
+            beim Vorstand bis zum 31.12. des Jahres in schriftlicher Form
+            eingegangen sein.
+          </p>
+          <p className="left-p">
+            Die{" "}
+            <a
+              target="_blank"
+              href="https://www.sc-baierbrunn.de/downloads/Sportverein/Datenschutzerkl%c3%a4rung.pdf"
+            >
+              Datenschutzerklärung
+            </a>{" "}
+            habe ich gelesen und bin damit einverstanden.
+          </p>
+
           <TextField
             required
             id="outlined-required"
@@ -241,6 +249,14 @@ class OutlinedTextFields extends React.Component {
             className={classes.textField}
             variant="outlined"
           />
+          <Button
+            id="submitButton"
+            type="submit"
+            variant="contained"
+            className={classes.button}
+          >
+            Antrag abschicken
+          </Button>
         </form>
       </div>
     );
