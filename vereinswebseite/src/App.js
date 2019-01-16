@@ -80,8 +80,6 @@ class App extends Component {
                 :
                 null
               }
-
-
             </div>
           </header>
           <Menu user={user} authService={Auth} onAuth={this._updateUser.bind(this)} />

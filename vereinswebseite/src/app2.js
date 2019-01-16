@@ -11,7 +11,7 @@ let db;
 let conn = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Gabel35!",
+  password: "root",
   database: "vereinswebseite_db",
   multipleStatements: true
 });
