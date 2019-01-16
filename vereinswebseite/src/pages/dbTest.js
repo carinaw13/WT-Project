@@ -22,8 +22,28 @@ class Test extends React.Component {
   constructor() {
     super();
     this.state = {
-      members: []
+      members: [],
+      tests: []
     };
+  }
+
+  sendForm() {
+    const data = { name: this.state.name };
+    debugger;
+    fetch("http://localhost:5000/tests", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+      .then(res => res.json())
+      .then(tests =>
+        this.setState({ tests }, () => console.log("data sent...", tests))
+      )
+      .catch(error => {
+        alert(error);
+      });
   }
 
   componentDidMount() {
@@ -57,22 +77,20 @@ class Test extends React.Component {
             <li key={member.member_id}>{member.name}</li>
           ))}
         </ul>
-
         <h2>POST Test</h2>
         <form className={classes.container} noValidate autoComplete="off">
           <TextField
             required
-            id="outlined-name"
             label="Name"
             className={classes.textField}
             value={this.state.name}
             onChange={this.handleChange("name")}
             variant="outlined"
           />
+          <Button onClick={this.sendForm.bind(this)} variant="contained" className={classes.button}>
+            Submit
+          </Button>
         </form>
-        <Button type="submit" variant="contained" className={classes.button}>
-          Submit
-        </Button>
       </div>
     );
   }
