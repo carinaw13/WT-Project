@@ -28,10 +28,13 @@ const styles = theme => ({
     margin: theme.spacing.unit,
     minWidth: 120
   },
+<<<<<<< Updated upstream
   container: {
     display: "flex",
     flexWrap: "wrap"
   }
+=======
+>>>>>>> Stashed changes
 });
 
 class UserForm extends React.Component {
