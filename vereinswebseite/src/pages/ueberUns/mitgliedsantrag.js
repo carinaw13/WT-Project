@@ -151,14 +151,11 @@ class OutlinedTextFields extends React.Component {
             variant="outlined"
           />
           <TextField
-            required
             id="outlined-required"
             label="Telefon/Mobil"
             className={classes.textField}
             variant="outlined"
           />
-
-          <p className="left-p">2. Anmeldedaten für den Online-Zugang</p>
           <TextField
             required
             id="outlined-email-input"
@@ -167,6 +164,15 @@ class OutlinedTextFields extends React.Component {
             type="email"
             name="email"
             autoComplete="email"
+            variant="outlined"
+          />
+
+          <p className="left-p">2. Anmeldedaten für den Online-Zugang</p>
+          <TextField
+            required
+            id="outlined-required"
+            label="Benutzername"
+            className={classes.textField}
             variant="outlined"
           />
           <TextField
