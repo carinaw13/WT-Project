@@ -17,6 +17,11 @@ let conn = mysql.createConnection({
 });
 
 conn.connect();
+//----------------------------------------------------------------------------------
+
+// let's treat incoming request bodies as text/plain
+app.use(bp.json());
+
 
 app.get("/", (req, res) => {
   res.send("go to /members or /test");
@@ -89,6 +94,7 @@ app.delete("/employees/:id", (req, res) => {
 //Insert one specific employee
 app.post("/employees", (req, res) => {
   let emp = req.body;
+  console.log(req)
   var sql =
     "SET @EmpID = ?;SET @Name = ?;SET @EmpCode = ?;SET @Salary = ?; \
   CALL EmployeeAddOrEdit(@EmpID,@Name,@EmpCode,@Salary);";
@@ -101,18 +107,14 @@ app.post("/employees", (req, res) => {
     }
   );
 });
-//----------------------------------------------------------------------------------
-
-// let's treat incoming request bodies as text/plain
-app.use(bp.text());
 
 // this will catch any incoming request...
-app.use((req, res) => {
+/*app.use((req, res) => {
   console.log([req.method, req.hostname, req.ip, req.url, req.headers]);
   console.log(req.query);
   console.log(req.body);
   res.status(200).end(); // sends 200 OK, no body, closes connection
-});
+});*/
 
 // start the webserver, listen on port 3000
 app.listen(port, () => console.log("Example app.js listening on port " + port));
