@@ -1,4 +1,5 @@
 import React from "react";
+import "../../App.css";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
@@ -11,7 +12,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
 
-//import SignaturePad from "react-signature-pad-wrapper";
+import { Link } from "react-router-dom";
+
+const MyLink = props => <Link to="/" {...props} />;
 
 const styles = theme => ({
   textField: {
@@ -21,35 +24,70 @@ const styles = theme => ({
   menu: {
     width: 200
   },
-  root: {
-    display: "flex",
-    flexWrap: "wrap"
-  },
   formControl: {
     margin: theme.spacing.unit,
     minWidth: 120
   },
+  container: {
+    display: "flex",
+    flexWrap: "wrap"
+  }
 });
 
-class OutlinedTextFields extends React.Component {
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value
-    });
-  };
-
+class UserForm extends React.Component {
   state = {
     gender: ""
   };
 
+  sendForm() {
+    const data = {
+      gender: this.state.gender,
+      title: this.state.title,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      street: this.state.street,
+      houseNumber: this.state.houseNumber,
+      postCode: this.state.postCode,
+      city: this.state.city,
+      birthDate: this.state.birthDate,
+      phoneNumber: this.state.phoneNumber,
+      email: this.state.email,
+      username: this.state.username,
+      password: this.state.password,
+      accountOwner: this.state.accountOwner,
+      bankName: this.state.bankName,
+      iban: this.state.iban,
+      bic: this.state.bic,
+      cityOfRegistration: this.state.cityOfRegistration,
+      dateOfRegistration: this.state.dateOfRegistration
+    };
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(users =>
+        this.setState({ users }, () => console.log("data sent...", users))
+      )
+      .catch(error => {
+        alert(error);
+      });
+  }
+
+  //form control - unterbricht Rahmen, um Label korrekt anzuzeigen
   componentDidMount() {
     this.setState({
       labelWidth: ReactDOM.findDOMNode(this.InputLabelRef).offsetWidth
     });
   }
 
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    });
   };
 
   render() {
@@ -65,8 +103,8 @@ class OutlinedTextFields extends React.Component {
           1. Ich beantrage hiermit meine Aufnahme als Mitglied im SC Baierbrunn
           e.V.
         </p>
-        <form className={classes.root} autoComplete="off">
-          <FormControl variant="outlined" className={classes.formControl}>
+        <form className={classes.container} noValidate autoComplete="off">
+          <FormControl variant="outlined" className="gender-select">
             <InputLabel
               ref={ref => {
                 this.InputLabelRef = ref;
@@ -76,7 +114,7 @@ class OutlinedTextFields extends React.Component {
             </InputLabel>
             <Select
               value={this.state.gender}
-              onChange={this.handleChange}
+              onChange={this.handleChange("gender")}
               input={
                 <OutlinedInput
                   labelWidth={this.state.labelWidth}
@@ -89,97 +127,112 @@ class OutlinedTextFields extends React.Component {
               <MenuItem value={"divers"}>divers</MenuItem>
             </Select>
           </FormControl>
+
           <TextField
-            id="outlined-required"
             label="Titel"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.title}
+            onChange={this.handleChange("title")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Vorname"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.firstName}
+            onChange={this.handleChange("firstName")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Name"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.lastName}
+            onChange={this.handleChange("lastName")}
           />
 
           <TextField
             required
-            id="outlined-required"
             label="Straße"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.street}
+            onChange={this.handleChange("street")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Hausnummer"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.houseNumber}
+            onChange={this.handleChange("houseNumber")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Postleitzahl"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.postCode}
+            onChange={this.handleChange("postCode")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Ort"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.city}
+            onChange={this.handleChange("city")}
           />
 
           <TextField
             required
-            id="outlined-required"
             label="Geburtsdatum"
             placeholder="TT.MM.JJJJ"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.birthDate}
+            onChange={this.handleChange("birthDate")}
           />
           <TextField
-            id="outlined-required"
             label="Telefon/Mobil"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.phoneNumber}
+            onChange={this.handleChange("phoneNumber")}
           />
           <TextField
             required
             id="outlined-email-input"
             label="Email"
-            className={classes.textField}
+            className="text-field"
             type="email"
             name="email"
             autoComplete="email"
             variant="outlined"
+            value={this.state.email}
+            onChange={this.handleChange("email")}
           />
 
           <p className="left-p">2. Anmeldedaten für den Online-Zugang</p>
           <TextField
             required
-            id="outlined-required"
             label="Benutzername"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.username}
+            onChange={this.handleChange("username")}
           />
           <TextField
             required
             id="standard-password-input"
             label="Password"
-            className={classes.textField}
+            className="text-field"
             type="password"
             autoComplete="current-password"
             variant="outlined"
+            value={this.state.password}
+            onChange={this.handleChange("password")}
           />
 
           <p className="left-p">
@@ -189,31 +242,35 @@ class OutlinedTextFields extends React.Component {
           </p>
           <TextField
             required
-            id="outlined-required"
             label="Kontoinhaber"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.accountOwner}
+            onChange={this.handleChange("accountOwner")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Bank"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.bankName}
+            onChange={this.handleChange("bankName")}
           />
           <TextField
             required
-            id="outlined-required"
             label="IBAN"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.iban}
+            onChange={this.handleChange("iban")}
           />
           <TextField
             required
-            id="outlined-required"
             label="BIC"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.bic}
+            onChange={this.handleChange("bic")}
           />
 
           <p className="left-p">
@@ -240,23 +297,25 @@ class OutlinedTextFields extends React.Component {
 
           <TextField
             required
-            id="outlined-required"
             label="Ort"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.cityOfRegistration}
+            onChange={this.handleChange("cityOfRegistration")}
           />
           <TextField
             required
-            id="outlined-required"
             label="Datum"
-            className={classes.textField}
+            className="text-field"
             variant="outlined"
+            value={this.state.dateOfRegistration}
+            onChange={this.handleChange("dateOfRegistration")}
           />
           <Button
             id="submitButton"
-            type="submit"
             variant="contained"
-            className={classes.button}
+            onClick={this.sendForm.bind(this)}
+            component={MyLink}
           >
             Antrag abschicken
           </Button>
@@ -266,8 +325,8 @@ class OutlinedTextFields extends React.Component {
   }
 }
 
-OutlinedTextFields.propTypes = {
+UserForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(OutlinedTextFields);
+export default withStyles(styles)(UserForm);

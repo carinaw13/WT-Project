@@ -28,14 +28,17 @@ class Test extends React.Component {
   }
 
   sendForm() {
-    const data = { name: this.state.name };
+    const data = {
+      firstname: this.state.firstname,
+      lastname: this.state.lastname
+    };
     debugger;
     fetch("http://localhost:5000/tests", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
-      },
+      }
     })
       .then(res => res.json())
       .then(tests =>
@@ -66,28 +69,35 @@ class Test extends React.Component {
     });
   };
 
+
   render() {
     const { classes } = this.props;
 
     return (
       <div>
-        <h2>Mitglieder</h2>
-        <ul>
-          {this.state.members.map(member => (
-            <li key={member.member_id}>{member.name}</li>
-          ))}
-        </ul>
         <h2>POST Test</h2>
         <form className={classes.container} noValidate autoComplete="off">
           <TextField
             required
-            label="Name"
+            label="Vorname"
             className={classes.textField}
-            value={this.state.name}
-            onChange={this.handleChange("name")}
+            value={this.state.firstname}
+            onChange={this.handleChange("firstname")}
             variant="outlined"
           />
-          <Button onClick={this.sendForm.bind(this)} variant="contained" className={classes.button}>
+          <TextField
+            required
+            label="Nachname"
+            className={classes.textField}
+            value={this.state.lastname}
+            onChange={this.handleChange("lastname")}
+            variant="outlined"
+          />
+          <Button
+            onClick={this.sendForm.bind(this)}
+            variant="contained"
+            className={classes.button}
+          >
             Submit
           </Button>
         </form>
