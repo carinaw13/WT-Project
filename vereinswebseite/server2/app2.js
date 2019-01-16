@@ -4,6 +4,7 @@ const app = express(); // create a new express app
 const conn = require("./connection");
 const port = 5000;
 const MembersModule = require("./members.module");
+const TestsModule = require("./test.module");
 
 let db;
 
@@ -25,6 +26,13 @@ app.get("/members", (req, res) => {
 app.post("/members", async (req, res) => {
   let member = req.body;
   let result = await new MembersModule(conn).createMember(member);
+  res.send(result);
+});
+
+app.post("/tests", async (req, res) => {
+  let test = req.body;
+  debugger;
+  let result = await new TestsModule(conn).createTest(test);
   res.send(result);
 });
 
