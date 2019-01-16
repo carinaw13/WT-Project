@@ -68,10 +68,14 @@ class App extends Component {
               </h2>
               {user != null ?
                 (<React.Fragment>
-                  <h3>Herzlich Willkommen {user.username} ! </h3>
+                  <h3 style={{
+                  fontSize: "15px",
+                  marginLeft: "800px"
+
+                }} >Herzlich Willkommen {user.username} ! </h3>
                   <p className="App-intro">
                     <Button
-                      style={{ backgroundColor: "rgb(8, 8, 94)", color:"white"}}
+                      style={{ backgroundColor: "rgb(8, 8, 94)", color: "white", marginLeft: "800px" }}
                       onClick={this.handleLogout.bind(this)}
                     >Logout</Button>
                   </p>

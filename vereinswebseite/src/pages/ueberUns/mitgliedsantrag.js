@@ -28,7 +28,7 @@ const styles = theme => ({
   formControl: {
     margin: theme.spacing.unit,
     minWidth: 120
-  }
+  },
 });
 
 class OutlinedTextFields extends React.Component {
@@ -84,9 +84,6 @@ class OutlinedTextFields extends React.Component {
                 />
               }
             >
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
               <MenuItem value={"männlich"}>männlich</MenuItem>
               <MenuItem value={"weiblich"}>weiblich</MenuItem>
               <MenuItem value={"divers"}>divers</MenuItem>
