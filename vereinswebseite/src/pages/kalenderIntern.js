@@ -34,29 +34,18 @@ class kalenderIntern extends Component {
                 eventLimit: true,
 
                 events: [{
-                    title: 'All Day Event',
+                    title: 'Neujahrsempfang Gemeinde Baierbrunn',
                     start: '2019-01-01'
                 }, {
-                    title: 'Long Event',
+                    title: 'Besprechung Fasching',
                     start: '2019-01-07',
                     end: '2019-01-10'
                 }, {
                     id: 999,
-                    title: 'Repeating Event',
-                    start: '2019-01-09T16:00'
-                }, {
-                    id: 999,
-                    title: 'Repeating Event',
+                    title: 'Vereinshaus putzen',
                     start: '2019-01-16T16:00'
                 }, {
-                    title: 'Meeting',
-                    start: '2019-01-12T10:30',
-                    end: '2019-01-12T12:30'
-                }, {
-                    title: 'Lunch',
-                    start: '2019-01-12T12:00:00'
-                }, {
-                    title: 'Birthday Party',
+                    title: 'Skikurs SCB',
                     start: '2019-01-13'
                 }, {
                     title: 'Click for Google',
