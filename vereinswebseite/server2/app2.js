@@ -45,6 +45,11 @@ app.post("/tests", async (req, res) => {
   let result = await new TestsModule(conn).createTest(test);
   res.send(result);
 });
+
+app.delete("/tests/:id", (req, res) => {
+  let result = new TestsModule(conn).deleteTest(req);
+  res.send(result);
+});
 //------------------------------------------------------------------------------------------------
 
 // start the webserver

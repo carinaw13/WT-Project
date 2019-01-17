@@ -14,25 +14,9 @@ import Button from "@material-ui/core/Button";
 
 import { Link } from "react-router-dom";
 
-const MyLink = props => <Link to="/" {...props} />;
+const styles = require("../../services/themeStyles");
 
-const styles = theme => ({
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
-  },
-  menu: {
-    width: 200
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
-  },
-  container: {
-    display: "flex",
-    flexWrap: "wrap"
-  }
-});
+const MyLink = props => <Link to="/" {...props} />;
 
 class UserForm extends React.Component {
   state = {
