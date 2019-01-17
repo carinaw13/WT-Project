@@ -13,6 +13,15 @@ const styles = theme => ({
   formControl: {
     margin: theme.spacing.unit,
     minWidth: 120
+  },
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    padding: "5px 20px 20px 30px",
+    margin: "15px",
+    textAlign: "left",
+    "min-height": "300px"
   }
 });
 

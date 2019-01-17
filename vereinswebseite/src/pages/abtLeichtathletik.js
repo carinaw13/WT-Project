@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -20,8 +20,7 @@ const CustomTableCell = withStyles(theme => ({
   }
 }))(TableCell);
 
-const styles = theme => ({
-});
+const styles = theme => ({});
 
 let id = 0;
 function createData(name, kontakt, lizenz, gruppe) {
