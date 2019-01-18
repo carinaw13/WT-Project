@@ -5,17 +5,7 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import "../App.css";
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    padding: "5px 20px 20px 30px",
-    margin: "15px",
-    textAlign: "left",
-    "min-height": "300px"
-  }
-});
+const styles = require("../services/themeStyles");
 
 function CenteredGrid(props) {
   const { classes } = props;

@@ -7,16 +7,7 @@ import TextField from "@material-ui/core/TextField";
 
 import Button from "@material-ui/core/Button";
 
-const styles = theme => ({
-  container: {
-    display: "flex",
-    flexWrap: "wrap"
-  },
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
-  }
-});
+const styles = require("../services/themeStyles");
 
 class Test extends React.Component {
   constructor() {

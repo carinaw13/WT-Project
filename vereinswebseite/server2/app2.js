@@ -1,16 +1,15 @@
-const express = require("express"); // load the node express module
+const express = require("express");
 const bp = require("body-parser");
-const app = express(); // create a new express app
+const app = express();
 const conn = require("./connection");
 const port = 5000;
 const MembersModule = require("./members.module");
-
-let db;
 
 conn.connect();
 
 app.use(bp.json());
 
+//------------------------------------------------------------------------------------------------
 app.get("/", (req, res) => {
   res.send("go to /members or /test");
 });
@@ -28,5 +27,11 @@ app.post("/members", async (req, res) => {
   res.send(result);
 });
 
-// start the webserver, listen on port 3000
-app.listen(port, () => console.log("Example app.js listening on port " + port));
+app.delete("/tests/:id", (req, res) => {
+  let result = new TestsModule(conn).deleteTest(req);
+  res.send(result);
+});
+//------------------------------------------------------------------------------------------------
+
+// start the webserver
+app.listen(port, () => console.log("app2.js listening on port " + port));

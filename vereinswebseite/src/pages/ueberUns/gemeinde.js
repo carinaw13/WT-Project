@@ -7,8 +7,8 @@ class Gemeinde extends Component {
   render() {
     return (
       
-      <div class="ueberUns-mainbody-content">
-      <div class="page-header">
+      <div className="ueberUns-mainbody-content">
+      <div className="page-header">
       <Iframe url="http://www.baierbrunn.de/"
         allowFullScreen/>
         

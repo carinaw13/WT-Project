@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
@@ -20,8 +20,7 @@ const CustomTableCell = withStyles(theme => ({
   }
 }))(TableCell);
 
-const styles = theme => ({
-});
+const styles = theme => ({});
 
 let id = 0;
 function createData(name, kontakt, lizenz, gruppe) {
@@ -48,11 +47,11 @@ function CustomizedTable(props) {
   const { classes } = props;
 
   return (
-    <div class="abt-mainbody-content">
-      <div class="page-header">
+    <div className="abt-mainbody-content">
+      <div className="page-header">
         <h1>Leichtathletik</h1>
       </div>
-      <div class="page-body">
+      <div className="page-body">
         <h4>Abteilungsleiter</h4>
         <div>
           Werner Tüting

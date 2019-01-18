@@ -2,9 +2,6 @@ import React, { Component } from 'react'
 import $ from 'jquery';
 import 'fullcalendar';
 import 'moment';
-import StyleSheet from '../../node_modules/fullcalendar/dist/fullcalendar.css';
-import Deutsch from '../../node_modules/fullcalendar/dist/locale/de.js';
-import GoogleCalendar from '../../node_modules/fullcalendar/dist/gcal.js';
 
 
 
@@ -58,8 +55,8 @@ class kalenderIntern extends Component {
     
 
     return (
-      <div class="kalender-mainbody-content">
-        <div class="page-header">
+      <div className="kalender-mainbody-content">
+        <div className="page-header">
             <div id="calendar"></div>
         </div> 
       </div>

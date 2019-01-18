@@ -11,29 +11,12 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import Button from "@material-ui/core/Button";
-
 import { Link } from "react-router-dom";
 
+
+const styles = require("../../services/themeStyles");
+
 const MyLink = props => <Link to="/" {...props} />;
-
-const styles = theme => ({
-  textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit
-  },
-  menu: {
-    width: 200
-  },
-  formControl: {
-    margin: theme.spacing.unit,
-    minWidth: 120
-  },
-  container: {
-    display: "flex",
-    flexWrap: "wrap"
-  }
-
-});
 
 class UserForm extends React.Component {
   state = {
@@ -288,7 +271,6 @@ class UserForm extends React.Component {
           <p className="left-p">
             Die{" "}
             <a
-              target="_blank"
               href="https://www.sc-baierbrunn.de/downloads/Sportverein/Datenschutzerkl%c3%a4rung.pdf"
             >
               Datenschutzerklärung

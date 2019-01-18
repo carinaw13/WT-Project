@@ -4,11 +4,9 @@ module.exports = class Users {
   }
 
   createUser(user) {
-    let sql =
-      "INSERT INTO user (gender,title,firstName,lastName,street,houseNumber,postCode,city,birthDate,phoneNumber,email,username,password,accountOwner,bankName,iban,bic,cityOfRegistration,dateOfRegistration) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     return new Promise((resolve, reject) => {
       this.conn.query(
-        sql,
+        "INSERT INTO user (gender,title,firstName,lastName,street,houseNumber,postCode,city,birthDate,phoneNumber,email,username,password,accountOwner,bankName,iban,bic,cityOfRegistration,dateOfRegistration) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         [
           user.gender,
           user.title,
@@ -37,14 +35,17 @@ module.exports = class Users {
       );
     });
   }
-/*
-  getUser() {
+
+  deleteUser(req) {
     return new Promise((resolve, reject) => {
-      this.conn.query("SELECT * FROM user", (err, rows, fields) => {
-        if (!err) resolve(rows);
-        else reject(err);
-      });
+      this.conn.query(
+        "DELETE FROM user WHERE userId = ?",
+        [req.params.id],
+        (err, rows, fields) => {
+          if (!err) resolve(rows);
+          else reject(err);
+        }
+      );
     });
   }
-  */
 };

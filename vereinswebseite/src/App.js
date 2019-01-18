@@ -95,7 +95,6 @@ class App extends Component {
           <Route path="/stockschützen" component={AbtStockschützen} />
           <Route path="/vorstand" component={Vorstand} />
           <Route path="/fotogalerie" component={Fotogalerie} />
-          <Route path="/vorstand" component={Vorstand} />
           <Route path="/gemeinde" component={Gemeinde} />
           <Route path="/kontakt" component={Kontakt} />
           <Route path="/impressum" component={Impressum} />
@@ -109,7 +108,7 @@ class App extends Component {
           <Route path="/mitgliedsantrag" component={Mitgliedsantrag} />
         </div>
         <footer className="footer">
-          <div class="wrapper">
+          <div className="wrapper">
             <a href="/">Home</a> | <a href="/kontakt">Kontakt</a>| <a href="/impressum">Impressum</a>
             <p className="p"> © 2019 </p>
           </div>
