@@ -18,12 +18,12 @@ function CenteredGrid(props) {
             <h1>Badminton</h1>
             <h2>Taktik und Technik</h2>
             <p><strong>Im Einzel</strong></p>
-            <ul class="list">
+            <ul className="list">
               <li>sollte man seinen Gegner laufen lassen</li>
               <li>selber möglichst immer wieder in die Mitte zurückkehren</li>
             </ul>
             <p><strong>Im Doppel</strong></p>
-            <ul class="list">
+            <ul className="list">
               <li>
                 sollte man den Ball möglichst früh spielen, möglichst schon am
                 Netz
@@ -34,7 +34,7 @@ function CenteredGrid(props) {
               </li>
             </ul>
             <h2>Spielarten</h2>
-            <ul class="list">
+            <ul className="list">
               <li>
                 <strong>Drop:&ensp;</strong>
                 Kurzer Ball hinters Netz, um den Gegner zu hetzen - wenn man die
@@ -69,7 +69,7 @@ function CenteredGrid(props) {
               Spielfähigkeit, Taktik und Koordination an:
             </p>
             <p><strong>Alleine</strong></p>
-            <ul class="list">
+            <ul className="list">
               <li>
                 gegen die Wand spielen (evtl. mit Gummiball), dabei möglichst
                 immer die gleiche Stelle treffen, wechselweise Vorhand/Rückhand,
@@ -86,7 +86,7 @@ function CenteredGrid(props) {
               </li>
             </ul>
             <p><strong>Mit Partner</strong></p>
-            <ul class="list">
+            <ul className="list">
               <li>Wechsel Zuspiel: Hoch/Tief, Vorhand/Rückhand, ...</li>
               <li>Ball erst stoppen, dann weiterspielen</li>
               <li>

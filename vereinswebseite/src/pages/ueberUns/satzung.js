@@ -4,8 +4,8 @@ import Iframe from 'react-iframe'
 class Satzung extends Component {
   render() {
     return (
-      <div class="ueberUns-mainbody-content">
-      <div class="page-header">
+      <div className="ueberUns-mainbody-content">
+      <div className="page-header">
           <Iframe url = "/web/viewer.html?file=Satzung.pdf">
            allowFullScreen/></Iframe>
       </div> 

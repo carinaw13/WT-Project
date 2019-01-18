@@ -47,11 +47,11 @@ function CustomizedTable(props) {
   const { classes } = props;
 
   return (
-    <div class="abt-mainbody-content">
-      <div class="page-header">
+    <div className="abt-mainbody-content">
+      <div className="page-header">
         <h1>Leichtathletik</h1>
       </div>
-      <div class="page-body">
+      <div className="page-body">
         <h4>Abteilungsleiter</h4>
         <div>
           Werner Tüting

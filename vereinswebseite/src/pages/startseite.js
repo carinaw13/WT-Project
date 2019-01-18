@@ -30,13 +30,13 @@ class Startseite extends React.Component {
     ];
 
     return (
-      <div class="mainbody-content">
-        <div class="page-header-home">
+      <div className="mainbody-content">
+        <div className="page-header-home">
           <div id="fullWidthSlider">
             <ImageGallery items={images} />
           </div>
         </div>
-        <div class="page-body, centered-text">
+        <div className="page-body, centered-text">
           <h2>
             Wir freuen uns, dass Sie den Weg zu uns gefunden haben und heißen
             Sie herzlich willkommen

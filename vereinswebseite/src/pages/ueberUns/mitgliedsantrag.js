@@ -271,7 +271,6 @@ class UserForm extends React.Component {
           <p className="left-p">
             Die{" "}
             <a
-              target="_blank"
               href="https://www.sc-baierbrunn.de/downloads/Sportverein/Datenschutzerkl%c3%a4rung.pdf"
             >
               Datenschutzerklärung

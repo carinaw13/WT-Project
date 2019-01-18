@@ -13,6 +13,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
 import TextField from "@material-ui/core/TextField";
 
+import IconButton from '@material-ui/core/IconButton';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+
 import "../App.css";
 
 function TabContainer(props) {
@@ -99,9 +103,12 @@ class TabsWrappedLabel extends React.Component {
     this.setState({ currentMenu: null, anchorEl: null });
   };
 
+  handleClickShowPassword = () => {
+    this.setState(state => ({ showPassword: !state.showPassword }));
+  };
+
   render() {
     const { classes, user, authService, onAuth } = this.props;
-    //const { value } = this.state;
     const { anchorEl, currentMenu } = this.state;
 
     return (
@@ -266,7 +273,7 @@ class TabsWrappedLabel extends React.Component {
                 value={this.state.name}
                 onChange={this.handleChange('username')}
                 margin="normal"
-                required="true"
+                required
               />
               <br></br>
               <TextField
@@ -274,10 +281,17 @@ class TabsWrappedLabel extends React.Component {
                 label="Passwort"
                 value={this.state.name}
                 onChange={this.handleChange('password')}
-                type="password"
+                type={this.state.showPassword ? 'text' : 'password'}
                 margin="normal"
-                required="true"
+                required
               />
+              <IconButton
+                  style={{marginTop:"20px"}}
+                  aria-label="Toggle password visibility"
+                  onClick={this.handleClickShowPassword}
+                >
+                  {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
               <br></br>
               <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft: "40px", paddingBottom: "10px" }}
                 onClick={(e) => {
