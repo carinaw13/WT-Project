@@ -50,7 +50,7 @@ let users = [
     },
     {
         id: 3,
-        username: 'Gerold We',
+        username: 'Gerold Wehr',
         password: 'geroldwehr'
     }
 ];
@@ -59,9 +59,7 @@ let users = [
 app.post('/login', (req, res) => {
 
     const { username, password } = req.body;
-    //Wenn die Datenbank steht dann muss man das hier noch einfügen
-    const user= {username,password}
-    //  const user = conn.query('SELECT password,username from User WHERE username='+username)
+    const user= {username,password}  
     //Use your DB ORM logic here to find user and compare password
         if (username == user.username && password == user.password /* Use your password hash checking logic here !*/) {
             //If all credentials are correct do this

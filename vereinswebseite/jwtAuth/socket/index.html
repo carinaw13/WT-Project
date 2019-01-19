@@ -7,7 +7,7 @@
     </head>
  
     <body>
-        <h1>Communicating with socket .io!</h1>
+        <h1>Sport Club Baierbrunn socket .io!</h1>
 
         <p><input type="button" value="Poke the server" id="poke" /></p>
 
@@ -17,11 +17,11 @@
         <script>
             var socket = io.connect('http://localhost:4000');
             socket.on('message', function(message) {
-                alert('The server has a message for you: ' + message);
+                alert('Der Server sendet eine Nachricht: ' + message);
             })
 
             $('#poke').click(function () {
-                socket.emit('message', 'Hi server, how are you?');
+                socket.emit('message', 'Hallo Server?');
             })
         </script>
     </body>

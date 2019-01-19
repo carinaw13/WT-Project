@@ -16,11 +16,11 @@ var io = require('socket.io').listen(server);
 
 // When a client connects, we note it in the console
 io.sockets.on('connection', function (socket) {
-    socket.emit('message', 'You are connected!');
-    socket.broadcast.emit('message', 'Another client has just send you a Member form!');
+    socket.emit('message', 'Du bist verbunden!');
+    socket.broadcast.emit('message', 'Ein anderer Client hat dir einen Mitgliedsantrag geschickt!');
 
     socket.on('message', function (message) {
-        console.log('A client is speaking to me! They\'re saying: ' + message);
+        console.log('Der Client sagt zu dir! Er\ sagt: ' + message);
     }); 
 });
 
