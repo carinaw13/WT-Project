@@ -3,18 +3,19 @@ const bp = require("body-parser");
 const app = express();
 const conn = require("./connection");
 const port = 5000;
-const UsersModule = require("./users.module");
+const UserModule = require("./user.module");
+const EventModule = require("./event.module");
 const TestsModule = require("./test.module");
 
 conn.connect();
 
 app.use(bp.json());
 
-//------------------------------------------------------------------------------------------------
 app.get("/", (req, res) => {
   res.send("Hello");
 });
 
+// USER ------------------------------------------------------------------------------------------------
 app.get("/users", (req, res) => {
   conn.query("SELECT * FROM user", (err, rows, fields) => {
     if (!err) res.send(rows);
@@ -24,15 +25,35 @@ app.get("/users", (req, res) => {
 
 app.post("/users", async (req, res) => {
   let user = req.body;
-  let result = await new UsersModule(conn).createUser(user);
+  let result = await new UserModule(conn).createUser(user);
   res.send(result);
 });
 
 app.delete("/users/:id", (req, res) => {
-  let result = new UsersModule(conn).deleteUser(req);
+  let result = new UserModule(conn).deleteUser(req);
   res.send(result);
 });
-//------------------------------------------------------------------------------------------------
+
+// EVENT ------------------------------------------------------------------------------------------------
+app.get("/events", (req, res) => {
+  conn.query("SELECT * FROM event", (err, rows, fields) => {
+    if (!err) res.send(rows);
+    else console.log(err);
+  });
+});
+
+app.post("/events", async (req, res) => {
+  let event = req.body;
+  let result = await new EventModule(conn).createEvent(event);
+  res.send(result);
+});
+
+app.delete("/events/:id", (req, res) => {
+  let result = new EventModule(conn).deleteEvent(req);
+  res.send(result);
+});
+
+// TEST ------------------------------------------------------------------------------------------------
 app.get("/tests", (req, res) => {
   conn.query("SELECT * FROM test", (err, rows, fields) => {
     if (!err) res.send(rows);
