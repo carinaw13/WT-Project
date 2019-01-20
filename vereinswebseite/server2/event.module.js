@@ -4,11 +4,11 @@ module.exports = class Events {
   }
 
   createEvent(event) {
-    var sql = "INSERT INTO event (title, url, start, end) VALUES (?,?,?,?)";
+    var sql = "INSERT INTO event (title, start, end) VALUES (?,?,?)";
     return new Promise((resolve, reject) => {
       this.conn.query(
         sql,
-        [event.title, event.url, event.start, event.end],
+        [event.title, event.start, event.end],
         (err, rows, fields) => {
           if (!err) resolve(rows);
           else reject(err);
