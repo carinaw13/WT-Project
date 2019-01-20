@@ -296,6 +296,7 @@ class UserForm extends React.Component {
           />
           <Button
             id="submitButton"
+            type="submit"
             variant="contained"
             onClick={this.sendForm.bind(this)}
             component={MyLink}
