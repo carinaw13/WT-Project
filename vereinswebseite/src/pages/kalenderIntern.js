@@ -3,18 +3,11 @@ import $ from "jquery";
 import "fullcalendar";
 import "moment";
 import "bootstrap";
-//import RModal from '../../node_modules/rmodal/dist/rmodal.js';
-//import jQueryUI from '../../node_modules/react-jqueryui/node_modules/react/react.js';
-//import DatePicker from 'react-jqueryui-datepicker';
-//import Dialog from "@material-ui/core/Dialog";
 import "@material-ui/core";
 
 import * as moment from "moment";
-//import Moment from '../../node_modules/moment/moment.js';
 import StyleSheet from "../../node_modules/fullcalendar/dist/fullcalendar.css";
 import Deutsch from "../../node_modules/fullcalendar/dist/locale/de.js";
-
-//import { Calendar } from 'fullcalendar';
 
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -25,6 +18,35 @@ import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 class kalenderIntern extends Component {
+  sendForm() {
+    const data = {
+      title: this.state.title,
+      start: this.state.start,
+      end: this.state.end
+    };
+    debugger;
+    fetch("http://localhost:5000/events", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(events =>
+        this.setState({ events }, () => console.log("data sent...", events))
+      )
+      .catch(error => {
+        alert(error);
+      });
+  }
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    });
+  };
+
   state = {
     open: false
   };
@@ -35,6 +57,11 @@ class kalenderIntern extends Component {
 
   handleClose = () => {
     this.setState({ open: false });
+  };
+
+  addEvent = () => {
+    this.sendForm();
+    setTimeout(() => window.location.reload(), 500);
   };
 
   render() {
@@ -95,29 +122,37 @@ class kalenderIntern extends Component {
                   label="Name der Veranstaltung"
                   type="text"
                   fullWidth
+                  value={this.state.title}
+                  onChange={this.handleChange("title")}
                 />
                 <br />
                 <p>
                   <font color="darkblue" size="1">
-                    Anfang: Datum und Zeit
+                    Startdatum
                   </font>
                 </p>
-                <TextField type="date" />
-                <TextField type="time" />
+                <TextField
+                  type="date"
+                  value={this.state.start}
+                  onChange={this.handleChange("start")}
+                />
                 <br />
                 <p>
                   <font color="darkblue" size="1">
-                    Ende: Datum und Zeit
+                    Enddatum
                   </font>
                 </p>
-                <TextField type="date" />
-                <TextField type="time" />
+                <TextField
+                  type="date"
+                  value={this.state.end}
+                  onChange={this.handleChange("end")}
+                />
               </DialogContent>
               <DialogActions>
                 <Button onClick={this.handleClose} color="primary">
                   Abbrechen
                 </Button>
-                <Button onClick={this.handleClose} color="primary">
+                <Button onClick={this.addEvent} type="submit" color="primary">
                   Hinzufügen
                 </Button>
               </DialogActions>

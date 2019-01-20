@@ -20,7 +20,7 @@ module.exports = class Events {
   deleteEvent(req) {
     return new Promise((resolve, reject) => {
       this.conn.query(
-        "DELETE FROM event WHERE eventId = ?",
+        "DELETE FROM event WHERE id = ?",
         [req.params.id],
         (err, rows, fields) => {
           if (!err) resolve(rows);
