@@ -6,9 +6,18 @@ Die Vereinswebseite ist in einen externen und einen internen Bereich gegliedert.
 
 Externe Besucher können sich auf der Startseite allgemeine Nachrichten ansehen, unter dem Menüpunkt "Über uns" Informationen über die Vereinsgeschichte, die Gemeinde Baierbrunn, den Vorstand, Kontakt und Impressum einsehen. Außerdem findet sich hier das Formular für den Aufnahmeantrag in den Verein. Um den Antrag abschicken zu können, muss der Besucher alle mit einem Stern gekennzeichneten Felder korrekt ausgefüllt haben und anschließend auf den "Antrag abschicken" Button klicken. Dadurch werden die Daten in die Datenbank übernommen. Unter dem Menüpunkt "Abteilungen" können die Besucher Informationen zu den einzelnen Abteilungen einsehen. Der aktuelle Kursplan aller Abteilungen ist unter dem Menüpunkt "Kalender" zu finden. Dieser wird als PDF Datei angezeigt und kann heruntergeladen oder direkt ausgedruckt werden.
 
-Hat ein externer Besucher einen Aufnahmeantrag abgeschickt, kann er sich mit seinen darin festgelegten Zugangsdaten (Benutzername und Passwort) über den Menüpunkt "Intern" einloggen. Als eingeloggtes Vereinsmitglied findet man unter dem Menüpunkt "Unter uns" zusätzlich zu den vorher genannten Seiten noch die Datenschutzerklärung, Satzung und Ehrenordnung des Vereins. Unter dem Menüpunkt "Kalender" findet der Nutzer einen Kalender mit allen internen Veranstaltungen, wie beispielsweise die Vorstandssitzungen. Über den Logout Button kann sich der interne Benutzer wieder ausloggen.
+Hat ein externer Besucher einen Aufnahmeantrag abgeschickt, kann er sich mit seinen darin festgelegten Zugangsdaten (Benutzername und Passwort) über den Menüpunkt "Intern" einloggen. Als eingeloggtes Vereinsmitglied findet man unter dem Menüpunkt "Unter uns" zusätzlich zu den vorher genannten Seiten noch die Datenschutzerklärung, Satzung und Ehrenordnung des Vereins. Unter dem Menüpunkt "Kalender" findet der Nutzer einen Kalender mit allen internen Veranstaltungen, wie beispielsweise die Vorstandssitzungen. Hier kann er über den Button "Veranstaltung hinzufügen" einen Dialog öffnen, über den er ein neues Event mit Titel, Start- und Enddatum anlegen kann. Über den Logout Button kann sich der interne Benutzer wieder ausloggen.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Anwendung starten
+
+Um die Anwendung zu starten, müssen drei Terminals geöffnet werden. Navigieren Sie im ersten Terminal in den Ordner "vereinswebseite" und führen Sie `npm start` aus (Port 3000).
+
+Im zweiten Terminal navigieren Sie zum Pfad "vereinswebseite/server2" und führen Sie den Befehl `node app2.js` aus um den Datenbank Server zu starten (Port 5000).
+
+Im dritten Terminal öffnen Sie den Pfad "vereinswebseite/jwtAuth" und führen Sie `npm start` aus (Port 8080).
+
 
 ## Available Scripts
 
