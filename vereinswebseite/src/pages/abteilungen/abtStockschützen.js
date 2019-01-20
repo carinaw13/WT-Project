@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import "../App.css";
+import "../../App.css";
 
-const styles = require("../services/themeStyles");
+const styles = require("../../services/themeStyles");
 
 function CenteredGrid(props) {
   const { classes } = props;
