@@ -5,7 +5,6 @@ import "moment";
 import "bootstrap";
 import "@material-ui/core";
 
-import * as moment from "moment";
 import StyleSheet from "../../node_modules/fullcalendar/dist/fullcalendar.css";
 import Deutsch from "../../node_modules/fullcalendar/dist/locale/de.js";
 
