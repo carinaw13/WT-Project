@@ -13,6 +13,10 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Popover from "@material-ui/core/Popover";
 import TextField from "@material-ui/core/TextField";
 
+import IconButton from '@material-ui/core/IconButton';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+
 import "../App.css";
 
 function TabContainer(props) {
@@ -80,8 +84,8 @@ const styles = theme => ({
 const NavButton = withStyles({})(Button);
 
 class TabsWrappedLabel extends React.Component {
-  handleChange = name => (event, value, name) => {
-    this.setState({ value, [name]: event.target.value });
+  handleChange = name => (event) => {
+    this.setState({ [name]: event.target.value });
   };
 
   state = {
@@ -99,261 +103,212 @@ class TabsWrappedLabel extends React.Component {
     this.setState({ currentMenu: null, anchorEl: null });
   };
 
+  handleClickShowPassword = () => {
+    this.setState(state => ({ showPassword: !state.showPassword }));
+  };
+
   render() {
-    const { classes } = this.props;
-    //const { value } = this.state;
+    const { classes, user, authService, onAuth } = this.props;
     const { anchorEl, currentMenu } = this.state;
-    const open = Boolean(anchorEl);
 
     return (
       <div className={classes.root}>
-        <AppBar
-          position="static"
-          style={{ flexDirection: "row", backgroundColor: "#08085e" }}
-        >
+        <AppBar position="static" style={{ flexDirection: 'row', backgroundColor: "#08085e" }} >
           <NavButton
-            onClick={() => {
-              this.props.history.push("/");
-            }}
+            onClick={() => { this.props.history.push("/") }}
             className={classes.NavButton}
           >
             Startseite
-          </NavButton>
+                  </NavButton>
           <NavButton
-            aria-owns={
-              currentMenu === "about-us-menu" ? "about-us-menu" : undefined
-            }
+            aria-owns={currentMenu === 'about-us-menu' ? 'about-us-menu' : undefined}
             aria-haspopup="true"
-            onClick={this.handleClick("about-us-menu")}
+            onClick={this.handleClick('about-us-menu')}
             className={classes.NavButton}
           >
             Über uns
-          </NavButton>
+                </NavButton>
           <Menu
             id="about-us-menu"
             anchorEl={anchorEl}
-            open={currentMenu === "about-us-menu"}
+            open={currentMenu === 'about-us-menu'}
             onClose={this.handleClose}
           >
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/unsereGeschichte");
-              }}
-            >
-              Unsere Geschichte
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/gemeinde");
-              }}
-            >
-              Gemeinde Baierbrunn
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/vorstand");
-              }}
-            >
-              Vorstand
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/basketball");
-              }}
-            >
-              Mitglied werden
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/kontakt");
-              }}
-            >
-              Kontakt
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/impressum");
-              }}
-            >
-              Impressum
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/datenschutz");
-              }}
-            >
-              Datenschutz
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/satzung");
-              }}
-            >
-              Satzung
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/ehrenordnung");
-              }}
-            >
-              Ehrenordnung
-            </MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/unsereGeschichte")
+            }}>Unsere Geschichte</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/gemeinde")
+            }}>Gemeinde Baierbrunn</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/vorstand")
+            }}>Vorstand</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/mitgliedsantrag")
+            }}>Mitglied werden</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/kontakt")
+            }}>Kontakt</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/impressum")
+            }}>Impressum</MenuItem>
+            {user === null ?
+              null
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/datenschutz")
+              }}>Datenschutz</MenuItem>)
+            }
+            {user === null ?
+              null
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/satzung")
+              }}>Satzung</MenuItem>)
+            }
+
+            {user === null ?
+              null
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/ehrenordnung")
+              }}>Ehrenordnung</MenuItem>)}
           </Menu>
           <NavButton
-            aria-owns={currentMenu === "abt-menu" ? "abt-menu" : undefined}
+            aria-owns={currentMenu === 'abt-menu' ? 'abt-menu' : undefined}
             aria-haspopup="true"
-            onClick={this.handleClick("abt-menu")}
+            onClick={this.handleClick('abt-menu')}
             className={classes.NavButton}
           >
             Abteilung
-          </NavButton>
+                </NavButton>
           <Menu
             id="abt-menu"
             anchorEl={anchorEl}
-            open={currentMenu === "abt-menu"}
+            open={currentMenu === 'abt-menu'}
             onClose={this.handleClose}
           >
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/badminton");
-              }}
-            >
-              Badminton
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/basketball");
-              }}
-            >
-              Basketball
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/leichtathletik");
-              }}
-            >
-              Leichtathletik
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/ski");
-              }}
-            >
-              Ski
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/stockschützen");
-              }}
-            >
-              Stockschützen
-            </MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/badminton")
+            }}>Badminton</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/basketball")
+            }}>Basketball</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/leichtathletik")
+            }}>Leichtathletik</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/ski")
+            }}>Ski</MenuItem>
+            <MenuItem onClick={() => {
+              this.handleClose()
+              this.props.history.push("/stockschützen")
+            }}>Stockschützen</MenuItem>
           </Menu>
           <NavButton
-            aria-owns={
-              currentMenu === "kalender-menu" ? "kalender-menu" : undefined
-            }
+            aria-owns={currentMenu === 'kalender-menu' ? 'kalender-menu' : undefined}
             aria-haspopup="true"
-            onClick={this.handleClick("kalender-menu")}
+            onClick={this.handleClick('kalender-menu')}
             className={classes.NavButton}
           >
             Kalender
-          </NavButton>
+                </NavButton>
           <Menu
             id="kalender-menu"
             anchorEl={anchorEl}
-            open={currentMenu === "kalender-menu"}
+            open={currentMenu === 'kalender-menu'}
             onClose={this.handleClose}
           >
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/kalenderExtern");
-              }}
-            >
-              Kursplan
-            </MenuItem>
-            <MenuItem
-              onClick={() => {
-                this.handleClose();
-                this.props.history.push("/kalenderIntern");
-              }}
-            >
-              Kalender
-            </MenuItem>
+            {user === null ?
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/kalenderExtern")
+              }}>Kursplan</MenuItem>)
+              :
+              (<MenuItem onClick={() => {
+                this.handleClose()
+                this.props.history.push("/kalenderIntern")
+              }}>Kalender</MenuItem>)
+            }
           </Menu>
           <NavButton
-            onClick={() => {
-              this.props.history.push("/fotogalerie");
-            }}
-            className={classes.NavButton}
-          >
-            Galerie
-          </NavButton>
-          <NavButton
-            aria-owns={currentMenu === "login-menu" ? "login-menu" : undefined}
+            aria-owns={currentMenu === 'login-menu' ? 'login-menu' : undefined}
             aria-haspopup="true"
-            onClick={this.handleClick("login-menu")}
+            onClick={this.handleClick('login-menu')}
             className={classes.NavButton}
           >
-            Login
-          </NavButton>
+            Intern
+                </NavButton>
           <Popover
             id="simple-popper"
-            open={open}
             anchorEl={anchorEl}
             onClose={this.handleClose}
             anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "center"
+              vertical: 'bottom',
+              horizontal: 'center',
             }}
             transformOrigin={{
-              vertical: "top",
-              horizontal: "center"
+              vertical: 'top',
+              horizontal: 'center',
             }}
-            open={currentMenu === "login-menu"}
+            open={currentMenu === 'login-menu'}
           >
             <Typography className={classes.typography}>
               <TextField
                 id="standard-name"
                 label="Benutzername"
                 value={this.state.name}
-                onChange={this.handleChange("name")}
+                onChange={this.handleChange('username')}
                 margin="normal"
+                required
               />
-              <br />
+              <br></br>
               <TextField
                 id="standard-name"
                 label="Passwort"
                 value={this.state.name}
-                onChange={this.handleChange("name")}
+                onChange={this.handleChange('password')}
+                type={this.state.showPassword ? 'text' : 'password'}
                 margin="normal"
+                required
               />
-              <br />
-              <Button
-                style={{
-                  paddingTop: "10px",
-                  paddingRight: "40px",
-                  paddingLeft: "40px",
-                  paddingBottom: "10px"
+              <IconButton
+                  style={{marginTop:"20px"}}
+                  aria-label="Toggle password visibility"
+                  onClick={this.handleClickShowPassword}
+                >
+                  {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+              <br></br>
+              <Button style={{ paddingTop: "10px", paddingRight: "40px", paddingLeft: "40px", paddingBottom: "10px" }}
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  authService.login(this.state.username, this.state.password)
+                    .then(res => {
+                      this.setState({ currentMenu: null })
+                      onAuth && onAuth()
+                    })
+                    .catch(err => {
+                      alert(err);
+                    })
                 }}
               >
                 Einloggen
-              </Button>
+                    </Button>
             </Typography>
           </Popover>
           <div className={classes.search}>

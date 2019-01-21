@@ -4,8 +4,8 @@ import Iframe from 'react-iframe'
 class Datenschutz extends Component {
   render() {
     return (
-      <div class="ueberUns-mainbody-content">
-      <div class="page-header">
+      <div className="ueberUns-mainbody-content">
+      <div className="page-header">
            <Iframe url = "/web/viewer.html?file=Datenschutzerkl.pdf">
            allowFullScreen/></Iframe> 
       </div> 

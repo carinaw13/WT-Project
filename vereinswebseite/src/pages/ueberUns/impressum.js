@@ -5,12 +5,12 @@ class Impressum extends Component {
   
   render() {
     return (
-        <div class="ueberUns-mainbody-content">
-            <div class="page-header">
+        <div className="ueberUns-mainbody-content">
+            <div className="page-header">
                 <h1>Impressum</h1>
             </div>            
 
-            <div class="impressum_adresse">
+            <div className="impressum_adresse">
               
               <h4>SportClub Baierbrunn e. V.</h4>
              
@@ -35,9 +35,9 @@ class Impressum extends Component {
 
             </div>
 
-            <div class="impressum_copyright">
+            <div className="impressum_copyright">
               <h4>Copyright</h4>
-              <p>&copy; 2018 SportClub Baierbrunn e. V. - Alle Rechte vorbehalten</p><br></br>
+              <p>&copy; 2019 SportClub Baierbrunn e. V. - Alle Rechte vorbehalten</p><br></br>
 
               <h4>Inhalt des Onlineangebotes</h4>
               <p>Der Anbieter übernimmt keine Gewähr für die Aktualität, Korrektheit, Vollständigkeit 
