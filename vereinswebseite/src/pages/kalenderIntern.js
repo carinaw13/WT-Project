@@ -21,8 +21,8 @@ class kalenderIntern extends Component {
   sendForm() {
     const data = {
       title: this.state.title,
-      start: this.state.start,
-      end: this.state.end
+      start: this.state.startDate + 'T' + this.state.startTime,
+      end: this.state.endDate + 'T' + this.state.endTime
     };
     debugger;
     fetch("http://localhost:5000/events", {
@@ -68,15 +68,15 @@ class kalenderIntern extends Component {
     $(document).ready(function() {
       $("#calendar").fullCalendar({
         header: {
-          left: "prev, next, today, addEventButton",
+          left: "prev, next, today",
           center: "title",
           right: "month, agendaWeek, agendaDay"
         },
 
         timezone: "local",
-        minTime: "00:00:00",
-        maxTime: "24:00:00",
-        timeFormat: "hh:mm",
+        minTime: "08:00:00",
+        maxTime: "20:00:00",
+        timeFormat: "HH:mm",
 
         selectable: true,
         selectHelper: true,
@@ -89,7 +89,7 @@ class kalenderIntern extends Component {
           url: "http://localhost:5000/events",
           type: "GET",
           error: function() {
-            alert("There was an error while fetching events!");
+            alert("Fehler beim Laden der Daten!");
           }
         }
       });
@@ -128,24 +128,34 @@ class kalenderIntern extends Component {
                 <br />
                 <p>
                   <font color="darkblue" size="1">
-                    Startdatum
+                    Startdatum und -zeit
                   </font>
                 </p>
                 <TextField
                   type="date"
-                  value={this.state.start}
-                  onChange={this.handleChange("start")}
+                  value={this.state.startDate}
+                  onChange={this.handleChange("startDate")}
+                />
+                <TextField
+                  type="time"
+                  value={this.state.startTime}
+                  onChange={this.handleChange("startTime")}
                 />
                 <br />
                 <p>
                   <font color="darkblue" size="1">
-                    Enddatum
+                    Enddatum und -zeit
                   </font>
                 </p>
                 <TextField
                   type="date"
-                  value={this.state.end}
-                  onChange={this.handleChange("end")}
+                  value={this.state.endDate}
+                  onChange={this.handleChange("endDate")}
+                />
+                <TextField
+                  type="time"
+                  value={this.state.endTime}
+                  onChange={this.handleChange("endTime")}
                 />
               </DialogContent>
               <DialogActions>
