@@ -96,12 +96,12 @@ class kalenderIntern extends Component {
     });
 
     return (
-      <div class="kalender-mainbody-content">
-        <div class="page-header">
+      <div className="kalender-mainbody-content">
+        <div className="page-header">
           <div>
             <Button
               variant="outlined"
-              color="darkblue"
+              color="inherit"
               onClick={this.handleClickOpen}
             >
               neue Veranstaltung
