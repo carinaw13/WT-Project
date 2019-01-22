@@ -127,7 +127,7 @@ class App extends Component {
     this.props.history.replace('/');
   }
 
-
+//Überprüfung, ob wir eingeloggt sind und dann decodieren wir das Token und wenn das erfolgreich war, werden wir auf unsere Startseite geleitet 
   _updateUser() {
     if (Auth.loggedIn()) {
       try {

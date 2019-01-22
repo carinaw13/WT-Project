@@ -11,9 +11,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
-// const conn = require("../server2/connection");
 
-// conn.connect();
 
 // Instantiating the express app
 const app = express();
@@ -37,23 +35,23 @@ const jwtMW = exjwt({
 
 
 // MOCKING DB just for test
-let users = [
-    {
-        id: 1,
-        username: 'test',
-        password: 'asdf123'
-    },
-    {
-        id: 2,
-        username: 'test2',
-        password: 'asdf12345'
-    },
-    {
-        id: 3,
-        username: 'Gerold Wehr',
-        password: 'geroldwehr'
-    }
-];
+// let users = [
+//     {
+//         id: 1,
+//         username: 'test',
+//         password: 'asdf123'
+//     },
+//     {
+//         id: 2,
+//         username: 'test2',
+//         password: 'asdf12345'
+//     },
+//     {
+//         id: 3,
+//         username: 'Gerold Wehr',
+//         password: 'geroldwehr'
+//     }
+// ];
 
 // LOGIN ROUTE
 app.post('/login', (req, res) => {

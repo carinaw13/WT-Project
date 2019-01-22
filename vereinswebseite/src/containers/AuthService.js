@@ -8,8 +8,8 @@ export default class AuthService {
         this.getProfile = this.getProfile.bind(this)
     }
 
+    //Token wird in der loginMethode abgerufen und im localStorageBrowser gespeichert
     login(username, password) {
-        // Get a token from api server using the fetch api
         return this.fetch(`${this.domain}/login`, {
             method: 'POST',
             body: JSON.stringify({
@@ -70,8 +70,7 @@ export default class AuthService {
             'Content-Type': 'application/json'
         }
 
-        // Setting Authorization header
-        // Authorization: Bearer xxxxxxx.xxxxxxxx.xxxxxx
+        //Authorization Headerden Antwortstatus automatisch festlegt und überprüft
         if (this.loggedIn()) {
             headers['Authorization'] = 'Bearer ' + this.getToken()
         }

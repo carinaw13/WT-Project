@@ -92,6 +92,8 @@ class TabsWrappedLabel extends React.Component {
     anchorEl: null,
     currentMenu: null
   };
+  
+  //Eingabewerte auf den Zustand der Komponente setzt 
 
   handleClick = menuName => {
     return event => {
